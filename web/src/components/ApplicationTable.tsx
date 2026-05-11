@@ -1,0 +1,177 @@
+'use client';
+
+import { useState } from 'react';
+import { Application, Status, StatusColors } from '@/lib/types';
+import StatusBadge from './StatusBadge';
+
+interface Props {
+  applications: Application[];
+  onStatusChange: () => void;
+}
+
+export default function ApplicationTable({ applications, onStatusChange }: Props) {
+  const [filter, setFilter] = useState<Status | 'All'>('All');
+  const [sortBy, setSortBy] = useState<'score' | 'date' | 'company'>('score');
+  const [search, setSearch] = useState('');
+  const [updatingId, setUpdatingId] = useState<number | null>(null);
+
+  // Filter applications
+  let filtered = applications;
+  if (filter !== 'All') {
+    filtered = filtered.filter((app) => app.status === filter);
+  }
+  if (search) {
+    filtered = filtered.filter(
+      (app) =>
+        app.company.toLowerCase().includes(search.toLowerCase()) ||
+        app.role.toLowerCase().includes(search.toLowerCase())
+    );
+  }
+
+  // Sort applications
+  filtered.sort((a, b) => {
+    if (sortBy === 'score') return b.score - a.score;
+    if (sortBy === 'date') return b.date.localeCompare(a.date);
+    return a.company.localeCompare(b.company);
+  });
+
+  async function handleStatusChange(appId: number, newStatus: Status) {
+    setUpdatingId(appId);
+    try {
+      const res = await fetch(`/api/applications/${appId}/status`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: newStatus }),
+      });
+      if (res.ok) {
+        onStatusChange();
+      }
+    } catch (err) {
+      console.error('Failed to update status:', err);
+    } finally {
+      setUpdatingId(null);
+    }
+  }
+
+  const statuses: Status[] = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
+
+  return (
+    <div>
+      {/* Filters */}
+      <div className="mb-6 space-y-4">
+        <div className="flex gap-2 flex-wrap">
+          <button
+            onClick={() => setFilter('All')}
+            className={`px-3 py-1 rounded-full text-sm font-medium transition ${
+              filter === 'All'
+                ? 'bg-blue-500 text-white'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {statuses.map((status) => (
+            <button
+              key={status}
+              onClick={() => setFilter(status)}
+              className={`px-3 py-1 rounded-full text-sm font-medium transition ${
+                filter === status
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              {status}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex gap-4">
+          <input
+            type="text"
+            placeholder="Search company/role..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as any)}
+            className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="score">Sort by Score (High→Low)</option>
+            <option value="date">Sort by Date (New→Old)</option>
+            <option value="company">Sort by Company</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Table */}
+      <div className="overflow-x-auto bg-white rounded-lg shadow">
+        <table className="w-full text-sm">
+          <thead className="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th className="px-6 py-3 text-left font-semibold text-gray-700">#</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-700">Company</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-700">Role</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-700">Score</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-700">Status</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-700">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((app) => (
+              <tr
+                key={app.num}
+                className="border-b border-gray-200 hover:bg-gray-50 transition"
+              >
+                <td className="px-6 py-4 font-medium text-gray-900">{app.num}</td>
+                <td className="px-6 py-4 text-gray-700">
+                  <a
+                    href={`/applications/${app.num}`}
+                    className="text-blue-600 hover:underline"
+                  >
+                    {app.company}
+                  </a>
+                </td>
+                <td className="px-6 py-4 text-gray-700 text-xs">{app.role}</td>
+                <td className="px-6 py-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-16 bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-blue-500 h-2 rounded-full"
+                        style={{ width: `${(app.score / 5) * 100}%` }}
+                      />
+                    </div>
+                    <span className="font-semibold text-gray-700">{app.score.toFixed(1)}</span>
+                  </div>
+                </td>
+                <td className="px-6 py-4">
+                  <select
+                    value={app.status}
+                    onChange={(e) => handleStatusChange(app.num, e.target.value as Status)}
+                    disabled={updatingId === app.num}
+                    className="text-sm px-2 py-1 rounded border border-gray-300"
+                  >
+                    {statuses.map((status) => (
+                      <option key={status} value={status}>
+                        {status}
+                      </option>
+                    ))}
+                  </select>
+                </td>
+                <td className="px-6 py-4 text-gray-600 text-xs">{app.date}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {filtered.length === 0 && (
+        <div className="text-center py-12 text-gray-500">
+          No applications found
+        </div>
+      )}
+    </div>
+  );
+}
