@@ -5,10 +5,11 @@ import { Status, StatusColors } from '@/lib/types';
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const appId = parseInt(params.id, 10);
+    const { id } = await params;
+    const appId = parseInt(id, 10);
     const body = await request.json() as { status: string };
 
     const newStatus = normalizeStatus(body.status) as Status;

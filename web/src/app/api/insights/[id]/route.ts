@@ -4,10 +4,11 @@ import { Insight } from '@/lib/types';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const appId = parseInt(params.id, 10);
+    const { id } = await params;
+    const appId = parseInt(id, 10);
     const insight = await getInsight(appId);
 
     if (!insight) {
@@ -26,10 +27,11 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const appId = parseInt(params.id, 10);
+    const { id } = await params;
+    const appId = parseInt(id, 10);
     const body = await request.json() as Partial<Insight>;
 
     const insight: Insight = {
