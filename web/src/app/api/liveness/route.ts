@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
       }
 
       return NextResponse.json({ status: 'live' });
-    } catch (fetchError) {
+    } catch {
       clearTimeout(timeout);
       // Timeout or network error = uncertain
       return NextResponse.json({ status: 'uncertain' });

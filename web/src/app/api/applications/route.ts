@@ -4,7 +4,7 @@ import { parseApplications } from '@/lib/parser';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
     const { content } = await getFile('data/applications.md');
     const applications = parseApplications(content);

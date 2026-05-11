@@ -67,7 +67,7 @@ export function parseApplications(content: string): Application[] {
         report,
         notes,
       });
-    } catch (e) {
+    } catch {
       // Silently skip malformed rows
       continue;
     }

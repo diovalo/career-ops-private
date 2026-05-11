@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Application, Status, StatusColors } from '@/lib/types';
-import StatusBadge from './StatusBadge';
+import { Application, Status } from '@/lib/types';
 
 interface Props {
   applications: Application[];
@@ -96,7 +95,7 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
 
           <select
             value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as any)}
+            onChange={(e) => setSortBy(e.target.value as 'score' | 'date' | 'company')}
             className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="score">Sort by Score (High→Low)</option>

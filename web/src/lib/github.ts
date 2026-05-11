@@ -8,14 +8,6 @@ interface FileResponse {
   sha: string;
 }
 
-async function getGitHubToken(): Promise<string> {
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) {
-    throw new Error('GITHUB_TOKEN environment variable not set');
-  }
-  return token;
-}
-
 function getGitHubConfig(): {
   token: string;
   owner: string;
