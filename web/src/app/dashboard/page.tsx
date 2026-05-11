@@ -31,7 +31,7 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <div className="p-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Loading...</h1>
+        <h1 className="text-3xl font-bold text-gray-200 mb-6">Loading...</h1>
       </div>
     );
   }
@@ -39,7 +39,7 @@ export default function DashboardPage() {
   if (error) {
     return (
       <div className="p-8">
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800">
+        <div className="bg-red-950 border border-red-800 rounded-lg p-4 text-red-300">
           Error: {error}
         </div>
       </div>
@@ -49,8 +49,8 @@ export default function DashboardPage() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Application Tracker</h1>
-        <p className="text-gray-600 mt-2">{apps.length} applications</p>
+        <h1 className="text-3xl font-bold text-white">Application Tracker</h1>
+        <p className="text-gray-400 mt-2">{apps.length} applications</p>
       </div>
 
       <ApplicationTable applications={apps} onStatusChange={fetchApplications} />

@@ -63,8 +63,8 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
             onClick={() => setFilter('All')}
             className={`px-3 py-1 rounded-full text-sm font-medium transition ${
               filter === 'All'
-                ? 'bg-blue-500 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-blue-600 text-white'
+                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
             }`}
           >
             All
@@ -75,8 +75,8 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
               onClick={() => setFilter(status)}
               className={`px-3 py-1 rounded-full text-sm font-medium transition ${
                 filter === status
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               }`}
             >
               {status}
@@ -90,13 +90,12 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
             placeholder="Search company/role..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as 'score' | 'date' | 'company')}
-            className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="score">Sort by Score (High→Low)</option>
             <option value="date">Sort by Date (New→Old)</option>
@@ -106,43 +105,43 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto bg-white rounded-lg shadow">
+      <div className="overflow-x-auto bg-[#161b22] rounded-lg border border-gray-800">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 border-b border-gray-200">
+          <thead className="border-b border-gray-800">
             <tr>
-              <th className="px-6 py-3 text-left font-semibold text-gray-700">#</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-700">Company</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-700">Role</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-700">Score</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-700">Status</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-700">Date</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-400">#</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-400">Company</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-400">Role</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-400">Score</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-400">Status</th>
+              <th className="px-6 py-3 text-left font-semibold text-gray-400">Date</th>
             </tr>
           </thead>
           <tbody>
             {filtered.map((app) => (
               <tr
                 key={app.num}
-                className="border-b border-gray-200 hover:bg-gray-50 transition"
+                className="border-b border-gray-800 hover:bg-gray-800/50 transition"
               >
-                <td className="px-6 py-4 font-medium text-gray-900">{app.num}</td>
-                <td className="px-6 py-4 text-gray-700">
+                <td className="px-6 py-4 font-medium text-gray-400">{app.num}</td>
+                <td className="px-6 py-4">
                   <a
                     href={`/applications/${app.num}`}
-                    className="text-blue-600 hover:underline"
+                    className="text-blue-400 hover:text-blue-300 hover:underline"
                   >
                     {app.company}
                   </a>
                 </td>
-                <td className="px-6 py-4 text-gray-700 text-xs">{app.role}</td>
+                <td className="px-6 py-4 text-gray-400 text-xs">{app.role}</td>
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-16 bg-gray-200 rounded-full h-2">
+                    <div className="w-16 bg-gray-700 rounded-full h-1.5">
                       <div
-                        className="bg-blue-500 h-2 rounded-full"
+                        className="bg-blue-500 h-1.5 rounded-full"
                         style={{ width: `${(app.score / 5) * 100}%` }}
                       />
                     </div>
-                    <span className="font-semibold text-gray-700">{app.score.toFixed(1)}</span>
+                    <span className="font-semibold text-gray-200">{app.score.toFixed(1)}</span>
                   </div>
                 </td>
                 <td className="px-6 py-4">
@@ -150,7 +149,7 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
                     value={app.status}
                     onChange={(e) => handleStatusChange(app.num, e.target.value as Status)}
                     disabled={updatingId === app.num}
-                    className="text-sm px-2 py-1 rounded border border-gray-300"
+                    className="text-sm px-2 py-1 rounded bg-gray-800 border border-gray-700 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   >
                     {statuses.map((status) => (
                       <option key={status} value={status}>
@@ -159,7 +158,7 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
                     ))}
                   </select>
                 </td>
-                <td className="px-6 py-4 text-gray-600 text-xs">{app.date}</td>
+                <td className="px-6 py-4 text-gray-500 text-xs">{app.date}</td>
               </tr>
             ))}
           </tbody>
@@ -167,7 +166,7 @@ export default function ApplicationTable({ applications, onStatusChange }: Props
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-12 text-gray-500">
+        <div className="text-center py-12 text-gray-600">
           No applications found
         </div>
       )}
