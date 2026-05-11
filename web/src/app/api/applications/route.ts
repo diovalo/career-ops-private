@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getFile } from '@/lib/github';
 import { parseApplications } from '@/lib/parser';
 
-export const revalidate = 60; // Cache for 60 seconds
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
