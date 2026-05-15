@@ -33,7 +33,6 @@ export async function getFile(filePath: string): Promise<FileResponse> {
   const response = await fetch(url, {
     headers: {
       Authorization: `token ${config.token}`,
-      Accept: 'application/vnd.github.v3.raw+json',
       'X-GitHub-Api-Version': '2022-11-28',
     },
   });
@@ -44,34 +43,40 @@ export async function getFile(filePath: string): Promise<FileResponse> {
     );
   }
 
-  // When Accept is application/vnd.github.v3.raw+json, the response is the raw file content
-  // But we also need the SHA, so let's use the JSON response instead
-  const jsonUrl = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${filePath}?ref=${config.branch}`;
-  const jsonResponse = await fetch(jsonUrl, {
+  const data = (await response.json()) as {
+    content: string;
+    sha: string;
+  };
+
+  const content = Buffer.from(data.content, 'base64').toString('utf-8');
+
+  return { content, sha: data.sha };
+}
+
+/**
+ * Like getFile but returns null instead of throwing when the file doesn't exist (404)
+ */
+export async function getFileOrNull(filePath: string): Promise<FileResponse | null> {
+  const config = getGitHubConfig();
+
+  const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${filePath}?ref=${config.branch}`;
+
+  const response = await fetch(url, {
     headers: {
       Authorization: `token ${config.token}`,
       'X-GitHub-Api-Version': '2022-11-28',
     },
   });
 
-  if (!jsonResponse.ok) {
-    throw new Error(
-      `GitHub API error: ${jsonResponse.status} ${jsonResponse.statusText}`
-    );
+  if (response.status === 404) return null;
+
+  if (!response.ok) {
+    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
   }
 
-  const data = (await jsonResponse.json()) as {
-    content: string;
-    sha: string;
-  };
-
-  // Decode base64 content
+  const data = (await response.json()) as { content: string; sha: string };
   const content = Buffer.from(data.content, 'base64').toString('utf-8');
-
-  return {
-    content,
-    sha: data.sha,
-  };
+  return { content, sha: data.sha };
 }
 
 /**

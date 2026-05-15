@@ -55,6 +55,8 @@ export function parseApplications(content: string): Application[] {
       const report = reportMatch ? `[${reportMatch[1]}](${reportMatch[2]})` : reportLink;
 
       const notes = fields[8] || '';
+      const cvMatch = notes.match(/cover-[\w-]+\.pdf/);
+      const cvFile = cvMatch ? cvMatch[0] : undefined;
 
       apps.push({
         num,
@@ -66,6 +68,7 @@ export function parseApplications(content: string): Application[] {
         pdf,
         report,
         notes,
+        cvFile,
       });
     } catch {
       // Silently skip malformed rows

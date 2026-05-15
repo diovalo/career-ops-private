@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getFile } from '@/lib/github';
 import { parseApplications } from '@/lib/parser';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(_request: NextRequest) {
+export async function GET() {
   try {
     const { content } = await getFile('data/applications.md');
     const applications = parseApplications(content);

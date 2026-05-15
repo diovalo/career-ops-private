@@ -29,10 +29,22 @@ export default function RootLayout({
                 Dashboard
               </a>
               <a
-                href="/insights"
+                href="/dashboard/pipeline"
                 className="block px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition"
               >
-                All Insights
+                Pipeline
+              </a>
+              <a
+                href="/add"
+                className="block px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition"
+              >
+                Add Company
+              </a>
+              <a
+                href="/guide"
+                className="block px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition"
+              >
+                Guide
               </a>
             </nav>
             <div className="mt-auto pt-6 border-t border-gray-800 text-xs text-gray-600">

@@ -8,8 +8,24 @@ export interface Application {
   pdf: string; // ✅ or ❌
   report: string; // report link like [011](reports/...)
   notes: string;
+  cvFile?: string; // extracted from notes, e.g. "cover-acme-dev-2026-05-05.pdf"
 }
 
+export interface AppContext {
+  notes?: string;
+  companyUrl?: string;
+  contactName?: string;
+  contactLinkedIn?: string;
+  followUpDate?: string;    // ISO date "YYYY-MM-DD"
+  salaryRange?: string;
+  plannedMode?: string;     // career-ops mode: "contacto", "deep", "apply", etc.
+  plannedNote?: string;
+  updatedAt: string;
+}
+
+export type AppContextMap = Record<string, AppContext>;
+
+// Kept for backward compat with existing KV route
 export interface Insight {
   text: string;
   applyAngle?: string;
