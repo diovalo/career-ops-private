@@ -1,36 +1,50 @@
 # Career-Ops Dashboard
 
-A personal web dashboard for tracking job applications. Built on top of the [career-ops](https://github.com/santifer/career-ops) CLI system — the dashboard gives you a visual interface to the same `applications.md` file you already use locally.
+A personal web dashboard for tracking job applications. Built on top of the [career-ops](https://github.com/santifer/career-ops) CLI system — gives you a visual interface to the same files you already use locally, and lets you capture new companies from your phone.
 
 **Live at:** `https://career-ops-private.vercel.app`
 
 ---
 
-## What it is
+## What it does
 
-Instead of editing a markdown file by hand every time you want to check your pipeline or update a status, the dashboard gives you:
+| Feature | Description |
+|---------|-------------|
+| Application tracker | Sortable, filterable table of all applications with status dropdowns |
+| Company detail page | Pipeline stepper, CV info, inline context fields, mode selector |
+| Pipeline view | Kanban board — 8 columns (Evaluated → Offer, plus Rejected / Discarded / SKIP) |
+| Add company (mobile) | Form to capture a new company from your phone → writes to `data/pipeline.md` |
+| Per-company context | Contact name, LinkedIn, company URL, follow-up date, salary range — all synced to GitHub |
+| Mode selector | Pick the next career-ops mode per company and copy the command to clipboard |
+| Notes | Quick note popover in the table + full textarea on the detail page |
+| Follow-up alerts | Orange banner when any follow-up date has passed |
+| Stats bar | Total applications, response rate, interview rate |
+| Guide tab | Full reference for all career-ops CLI commands |
 
-- A sortable, filterable table of all your applications
-- Status dropdowns that write back to `applications.md` via a real git commit
-- Per-company notes that save automatically
-- Search by company or role name
-
-It's a read/write interface on top of the file you already have. No database — just GitHub.
+No database. Everything syncs through GitHub.
 
 ---
 
-## How it works (the short version)
-
-Your `data/applications.md` lives in this private GitHub repo. The dashboard reads it through the GitHub API and shows it as a table. When you change a status, the dashboard writes the updated file back to GitHub as a commit. You then `git pull` locally to get the change.
+## How it works
 
 ```
-Your machine              GitHub repo               Vercel dashboard
-────────────              ──────────────            ─────────────────
-/career-ops {JD}          data/applications.md      reads file on load
-  → updates local file                              writes file on status change
-  → git push         ──►  synced                ◄──
-                          git pull ◄──────────────  after status edits
+Your machine                   GitHub repo                    Vercel dashboard
+────────────                   ──────────────                 ─────────────────
+data/applications.md ──push──► data/applications.md ◄──────► reads on load
+data/app-context.json          data/app-context.json          writes context on save
+data/pipeline.md               data/pipeline.md ◄─────────── Add Company form
+     ▲                                                              │
+     └──── git pull ─────────────────────────────────────────── all writes
 ```
+
+**Two files on GitHub are read/written by the dashboard:**
+- `data/applications.md` — status changes write back as git commits
+- `data/app-context.json` — per-company context (contact, notes, follow-up date, etc.)
+
+**One file the dashboard adds to:**
+- `data/pipeline.md` — the Add Company form appends entries here
+
+After any dashboard write, run `git pull` locally to get the changes. The CLI can then read `app-context.json` directly.
 
 ---
 
@@ -41,8 +55,20 @@ Your machine              GitHub repo               Vercel dashboard
 | Framework | Next.js 15 (App Router, TypeScript) | free |
 | Hosting | Vercel hobby tier | free |
 | Data sync | GitHub Contents API | free |
-| Notes storage | Vercel KV (Redis) | free |
+| Context storage | `data/app-context.json` on GitHub (no KV) | free |
 | Styling | Tailwind CSS | free |
+
+---
+
+## Pages
+
+| Route | What it is |
+|-------|------------|
+| `/dashboard` | Main tracker table with stats, follow-up banner, filter tabs |
+| `/dashboard/pipeline` | Kanban board — 8 status columns |
+| `/applications/[id]` | Company detail: stepper, context fields, mode selector, notes |
+| `/add` | Add a new company to pipeline (mobile-friendly) |
+| `/guide` | Career-ops CLI command reference |
 
 ---
 
@@ -61,7 +87,7 @@ Before setting this up you need:
 
 ### Step 1 — Push your data to GitHub
 
-`data/applications.md` is gitignored by default (it's personal data). Force-add it to your private repo:
+`data/applications.md` is gitignored by default. Force-add it:
 
 ```bash
 git add -f data/applications.md
@@ -71,23 +97,21 @@ git push origin main
 
 ### Step 2 — Create a GitHub PAT
 
-1. Go to GitHub → Settings → Developer Settings → Personal Access Tokens → Fine-grained tokens
-2. Click **Generate new token**
-3. Set Repository access → **Only select repositories** → pick your repo
-4. Under Permissions → Contents → **Read and write**
-5. Generate and copy the token (you won't see it again)
+1. GitHub → Settings → Developer Settings → Personal Access Tokens → Fine-grained tokens
+2. **Generate new token** → Repository access → Only select repositories → pick your repo
+3. Permissions → Contents → **Read and write**
+4. Copy the token (you won't see it again)
 
 ### Step 3 — Deploy to Vercel
 
-1. Go to [vercel.com](https://vercel.com) → Add New Project → Import Git Repository
-2. Select your private repo (click "Configure GitHub App" if it doesn't appear)
-3. Set **Root Directory** to `web`
-4. Set **Framework Preset** to **Next.js** ← this is critical, if wrong everything 404s
-5. Click Deploy
+1. vercel.com → Add New Project → Import Git Repository → select your repo
+2. Set **Root Directory** to `web`
+3. Set **Framework Preset** to **Next.js** ← critical, wrong preset causes all routes to 404
+4. Click Deploy
 
 ### Step 4 — Add environment variables
 
-In your Vercel project → Settings → Environment Variables, add these four:
+Vercel → Settings → Environment Variables:
 
 | Variable | Value |
 |----------|-------|
@@ -100,7 +124,7 @@ Tip: use the **Import .env** button and paste the contents of `.env.local` direc
 
 ### Step 5 — Redeploy
 
-After adding env vars, go to Deployments → Redeploy. The dashboard will load with your applications.
+Deployments → Redeploy. The dashboard will load with your applications.
 
 ---
 
@@ -110,13 +134,20 @@ After adding env vars, go to Deployments → Redeploy. The dashboard will load w
 ```bash
 git push origin main
 ```
-The dashboard picks up new applications on next page load.
+Dashboard picks up new applications on next page load.
 
-**After updating a status in the dashboard (dashboard → local):**
+**After updating status or context in the dashboard (dashboard → local):**
 ```bash
 git pull
 ```
-The dashboard commits the status change to GitHub, `git pull` brings it back to your machine.
+Status changes and context edits are committed to GitHub by the dashboard; `git pull` brings them to your machine.
+
+**Adding a company from your phone:**
+1. Open `/add` in the browser
+2. Fill in company name, role, and the job URL
+3. Paste the JD text if you have it (saved for CLI evaluation)
+4. Submit → entry added to `data/pipeline.md` on GitHub
+5. On your laptop: `git pull` then `/career-ops pipeline` to evaluate
 
 ---
 
@@ -142,8 +173,8 @@ Open [http://localhost:3000](http://localhost:3000).
 | `GITHUB_OWNER` | Yes | Your GitHub username |
 | `GITHUB_REPO` | Yes | Repository name |
 | `GITHUB_BRANCH` | Yes | Branch to sync with (usually `main`) |
-| `KV_REST_API_URL` | For notes | Auto-set by Vercel when you link a KV store |
-| `KV_REST_API_TOKEN` | For notes | Auto-set by Vercel when you link a KV store |
+
+No KV store needed. Context is stored in `data/app-context.json` on GitHub.
 
 ---
 
@@ -153,26 +184,50 @@ Open [http://localhost:3000](http://localhost:3000).
 web/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx                         # Sidebar + shell
-│   │   ├── page.tsx                           # Redirects to /dashboard
-│   │   ├── dashboard/page.tsx                 # Main tracker table
+│   │   ├── layout.tsx                              # Sidebar + nav
+│   │   ├── page.tsx                                # Redirects to /dashboard
+│   │   ├── dashboard/
+│   │   │   ├── page.tsx                            # Tracker table + stats + banner
+│   │   │   └── pipeline/page.tsx                   # Kanban board (8 columns)
+│   │   ├── applications/[id]/page.tsx              # Company detail page
+│   │   ├── add/page.tsx                            # Add company form (mobile)
+│   │   ├── guide/page.tsx                          # CLI command reference
 │   │   └── api/
-│   │       ├── applications/route.ts          # GET — reads applications.md from GitHub
-│   │       ├── applications/[id]/status/      # PATCH — writes status back to GitHub
-│   │       ├── insights/[id]/route.ts         # GET/PUT — per-company notes (Vercel KV)
-│   │       └── liveness/route.ts              # GET — checks if a job URL is still live
+│   │       ├── applications/route.ts               # GET — reads applications.md
+│   │       ├── applications/[id]/status/route.ts   # PATCH — writes status to GitHub
+│   │       ├── context/route.ts                    # GET — full app-context.json
+│   │       ├── context/[id]/route.ts               # GET/PUT — per-company context
+│   │       ├── pipeline/route.ts                   # POST — adds to pipeline.md
+│   │       └── liveness/route.ts                   # GET — checks if job URL is live
 │   ├── components/
-│   │   ├── ApplicationTable.tsx               # Table with filters, search, sort, status edit
-│   │   └── StatusBadge.tsx                    # Color-coded status pill
+│   │   ├── ApplicationTable.tsx                    # Table with filters, sort, note popover
+│   │   └── StatusBadge.tsx                         # Color-coded status pill
 │   └── lib/
-│       ├── github.ts                          # GitHub Contents API client
-│       ├── parser.ts                          # Parses applications.md into typed objects
-│       ├── kv.ts                              # Vercel KV wrapper for notes
-│       └── types.ts                           # TypeScript types
-├── .env.local.example                         # Copy this to .env.local for local dev
+│       ├── github.ts                               # GitHub Contents API client
+│       ├── parser.ts                               # Parses applications.md into typed objects
+│       ├── kv.ts                                   # Vercel KV wrapper (legacy, unused)
+│       └── types.ts                               # TypeScript types
+├── .env.local.example
 ├── next.config.ts
 └── package.json
 ```
+
+---
+
+## Pipeline column meanings
+
+| Column | Meaning |
+|--------|---------|
+| Evaluated | Report done, deciding whether to apply |
+| Applied | Application sent |
+| Responded | Company replied |
+| Interview | In interview process |
+| Offer | Offer received |
+| Rejected | Company said no |
+| Discarded | Link was dead or posting wasn't genuine |
+| SKIP | Role not suitable — chose not to apply |
+
+Hover over a column header in the pipeline view to see its tooltip.
 
 ---
 
@@ -190,19 +245,9 @@ web/
 **Status update fails silently**
 - Your PAT needs **Contents: Read and write** permission, not just read
 
-**Notes don't save**
-- `KV_REST_API_URL` and `KV_REST_API_TOKEN` are not set
-- In Vercel: Storage → Create Database → KV → link to project → redeploy
+**Context fields don't save**
+- Check the browser console for API errors
+- Verify `GITHUB_TOKEN` has write permission
 
----
-
-## What's coming (V2)
-
-Once you have API keys, the plan is to add a per-company AI panel:
-
-- Task selector: Evaluate JD / Generate tailored CV / Write cover letter
-- Provider selector: Claude, Gemini, GPT-4o-mini — your choice per task
-- Custom instruction box: set your angle before generating
-- Output streamed directly into the UI
-
-Add your API keys to Vercel env vars and it'll be plug-and-play.
+**Add Company form fails**
+- Same as above — `data/pipeline.md` is written via the GitHub API and needs write permission
