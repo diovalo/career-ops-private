@@ -21,7 +21,7 @@ A personal web dashboard for tracking job applications. Built on top of the [car
 | Stats bar | Total applications, response rate, interview rate |
 | Guide tab | Full reference for all career-ops CLI commands |
 
-No database. Everything syncs through GitHub.
+No database. Everything syncs through GitHub. Password-protected — only you can access it.
 
 ---
 
@@ -56,6 +56,7 @@ After any dashboard write, run `git pull` locally to get the changes. The CLI ca
 | Hosting | Vercel hobby tier | free |
 | Data sync | GitHub Contents API | free |
 | Context storage | `data/app-context.json` on GitHub (no KV) | free |
+| Auth | Password cookie via Next.js middleware | free |
 | Styling | Tailwind CSS | free |
 
 ---
@@ -64,6 +65,7 @@ After any dashboard write, run `git pull` locally to get the changes. The CLI ca
 
 | Route | What it is |
 |-------|------------|
+| `/login` | Password gate — enter `DASHBOARD_SECRET` to get in |
 | `/dashboard` | Main tracker table with stats, follow-up banner, filter tabs |
 | `/dashboard/pipeline` | Kanban board — 8 status columns |
 | `/applications/[id]` | Company detail: stepper, context fields, mode selector, notes |
@@ -119,12 +121,13 @@ Vercel → Settings → Environment Variables:
 | `GITHUB_OWNER` | Your GitHub username |
 | `GITHUB_REPO` | Your repo name (e.g. `career-ops-private`) |
 | `GITHUB_BRANCH` | `main` |
+| `DASHBOARD_SECRET` | A password of your choice — required to log in |
 
 Tip: use the **Import .env** button and paste the contents of `.env.local` directly.
 
 ### Step 5 — Redeploy
 
-Deployments → Redeploy. The dashboard will load with your applications.
+Deployments → Redeploy. The dashboard will show a login page — enter your `DASHBOARD_SECRET` to access it. The cookie lasts 30 days so you won't need to log in again.
 
 ---
 
@@ -173,8 +176,11 @@ Open [http://localhost:3000](http://localhost:3000).
 | `GITHUB_OWNER` | Yes | Your GitHub username |
 | `GITHUB_REPO` | Yes | Repository name |
 | `GITHUB_BRANCH` | Yes | Branch to sync with (usually `main`) |
+| `DASHBOARD_SECRET` | Yes | Password to access the dashboard |
 
 No KV store needed. Context is stored in `data/app-context.json` on GitHub.
+
+If `DASHBOARD_SECRET` is not set, the dashboard is open with no password (acceptable for local dev, not for production).
 
 ---
 
@@ -184,8 +190,9 @@ No KV store needed. Context is stored in `data/app-context.json` on GitHub.
 web/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx                              # Sidebar + nav
+│   │   ├── layout.tsx                              # Root layout — sidebar + auth-aware shell
 │   │   ├── page.tsx                                # Redirects to /dashboard
+│   │   ├── login/page.tsx                          # Password gate (no sidebar)
 │   │   ├── dashboard/
 │   │   │   ├── page.tsx                            # Tracker table + stats + banner
 │   │   │   └── pipeline/page.tsx                   # Kanban board (8 columns)
@@ -193,12 +200,14 @@ web/
 │   │   ├── add/page.tsx                            # Add company form (mobile)
 │   │   ├── guide/page.tsx                          # CLI command reference
 │   │   └── api/
+│   │       ├── auth/route.ts                       # POST — validates password, sets cookie
 │   │       ├── applications/route.ts               # GET — reads applications.md
 │   │       ├── applications/[id]/status/route.ts   # PATCH — writes status to GitHub
 │   │       ├── context/route.ts                    # GET — full app-context.json
 │   │       ├── context/[id]/route.ts               # GET/PUT — per-company context
 │   │       ├── pipeline/route.ts                   # POST — adds to pipeline.md
 │   │       └── liveness/route.ts                   # GET — checks if job URL is live
+│   ├── middleware.ts                               # Auth guard — blocks all routes until cookie set
 │   ├── components/
 │   │   ├── ApplicationTable.tsx                    # Table with filters, sort, note popover
 │   │   └── StatusBadge.tsx                         # Color-coded status pill
@@ -251,3 +260,12 @@ Hover over a column header in the pipeline view to see its tooltip.
 
 **Add Company form fails**
 - Same as above — `data/pipeline.md` is written via the GitHub API and needs write permission
+
+**Stuck on login page / can't log in**
+- Check `DASHBOARD_SECRET` is set in Vercel env vars and the project was redeployed after adding it
+- Make sure you're typing the exact value you set (it's case-sensitive)
+- Clear cookies for the site and try again
+
+**Logged in on laptop but not on phone**
+- The auth cookie is per-browser — log in separately on each device
+- Cookie lasts 30 days so you only need to do it once per device
