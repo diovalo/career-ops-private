@@ -67,12 +67,22 @@ function NotePopover({
 
 export default function ApplicationTable({ applications, contextMap = {}, onStatusChange }: Props) {
   const [filter, setFilter] = useState<Status | 'All'>('All');
-  const [sortBy, setSortBy] = useState<'score' | 'date' | 'company'>('score');
+  const [sortBy, setSortBy] = useState<'score' | 'date' | 'company'>('date');
+  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
   const [search, setSearch] = useState('');
   const [updatingId, setUpdatingId] = useState<number | null>(null);
   const [openNoteId, setOpenNoteId] = useState<number | null>(null);
 
   const today = new Date().toISOString().slice(0, 10);
+
+  function handleSort(col: 'score' | 'date' | 'company') {
+    if (sortBy === col) {
+      setSortDir((d) => (d === 'desc' ? 'asc' : 'desc'));
+    } else {
+      setSortBy(col);
+      setSortDir(col === 'company' ? 'asc' : 'desc');
+    }
+  }
 
   let filtered = applications;
   if (filter !== 'All') filtered = filtered.filter((app) => app.status === filter);
@@ -83,10 +93,12 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
         app.role.toLowerCase().includes(search.toLowerCase())
     );
   }
-  filtered.sort((a, b) => {
-    if (sortBy === 'score') return b.score - a.score;
-    if (sortBy === 'date') return b.date.localeCompare(a.date);
-    return a.company.localeCompare(b.company);
+  filtered = [...filtered].sort((a, b) => {
+    let cmp = 0;
+    if (sortBy === 'score') cmp = b.score - a.score;
+    else if (sortBy === 'date') cmp = b.date.localeCompare(a.date);
+    else cmp = a.company.localeCompare(b.company);
+    return sortDir === 'desc' ? cmp : -cmp;
   });
 
   async function handleStatusChange(appId: number, newStatus: Status) {
@@ -142,13 +154,20 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
             className="flex-1 min-w-0 px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as 'score' | 'date' | 'company')}
+            value={`${sortBy}-${sortDir}`}
+            onChange={(e) => {
+              const [col, dir] = e.target.value.split('-') as ['score' | 'date' | 'company', 'asc' | 'desc'];
+              setSortBy(col);
+              setSortDir(dir);
+            }}
             className="px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="score">Score</option>
-            <option value="date">Date</option>
-            <option value="company">Company</option>
+            <option value="date-desc">Date ↓ newest</option>
+            <option value="date-asc">Date ↑ oldest</option>
+            <option value="score-desc">Score ↓ highest</option>
+            <option value="score-asc">Score ↑ lowest</option>
+            <option value="company-asc">Company A–Z</option>
+            <option value="company-desc">Company Z–A</option>
           </select>
         </div>
       </div>
@@ -209,7 +228,7 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
                   {isOverdue && (
                     <span title={`Follow-up: ${ctx.followUpDate}`} className="w-1.5 h-1.5 rounded-full bg-orange-500 inline-block" />
                   )}
-                  <span>{app.date.slice(5)}</span>
+                  <span>{app.date}</span>
                 </div>
               </div>
             </div>
@@ -223,11 +242,26 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
           <thead className="border-b border-gray-800">
             <tr>
               <th className="px-6 py-3 text-left font-semibold text-gray-400">#</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-400">Company</th>
+              <th
+                className="px-6 py-3 text-left font-semibold text-gray-400 cursor-pointer select-none hover:text-white transition"
+                onClick={() => handleSort('company')}
+              >
+                Company {sortBy === 'company' ? (sortDir === 'desc' ? '↓' : '↑') : <span className="opacity-30">↕</span>}
+              </th>
               <th className="px-6 py-3 text-left font-semibold text-gray-400">Role</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-400">Score</th>
+              <th
+                className="px-6 py-3 text-left font-semibold text-gray-400 cursor-pointer select-none hover:text-white transition"
+                onClick={() => handleSort('score')}
+              >
+                Score {sortBy === 'score' ? (sortDir === 'desc' ? '↓' : '↑') : <span className="opacity-30">↕</span>}
+              </th>
               <th className="px-6 py-3 text-left font-semibold text-gray-400">Status</th>
-              <th className="px-6 py-3 text-left font-semibold text-gray-400">Date</th>
+              <th
+                className="px-6 py-3 text-left font-semibold text-gray-400 cursor-pointer select-none hover:text-white transition"
+                onClick={() => handleSort('date')}
+              >
+                Date {sortBy === 'date' ? (sortDir === 'desc' ? '↓' : '↑') : <span className="opacity-30">↕</span>}
+              </th>
               <th className="px-4 py-3 text-left font-semibold text-gray-400">Notes</th>
             </tr>
           </thead>
