@@ -93,7 +93,7 @@ export default function GuidePage() {
   ];
 
   return (
-    <div className="p-6 max-w-3xl">
+    <div className="p-4 md:p-6 md:max-w-3xl">
       <h1 className="text-3xl font-bold text-white mb-2">Career-Ops Guide</h1>
       <p className="text-gray-500 text-sm mb-8">
         All commands available in the CLI. Run them in your terminal in the project directory.

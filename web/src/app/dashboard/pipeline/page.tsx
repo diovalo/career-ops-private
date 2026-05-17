@@ -67,7 +67,7 @@ export default function PipelinePage() {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-4 md:p-6">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-white">Pipeline</h1>
         <a
@@ -78,13 +78,13 @@ export default function PipelinePage() {
         </a>
       </div>
 
-      <div className="flex gap-4 overflow-x-auto pb-4">
+      <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory md:snap-none">
         {COLUMNS.map((col) => {
           const cards = grouped[col];
           return (
             <div
               key={col}
-              className={`shrink-0 w-52 rounded-lg border ${COLUMN_COLORS[col]} bg-[#161b22]`}
+              className={`shrink-0 w-[72vw] md:w-52 snap-start rounded-lg border ${COLUMN_COLORS[col]} bg-[#161b22]`}
             >
               <div className="px-3 py-2.5 border-b border-gray-800" title={COLUMN_TOOLTIPS[col]}>
                 <span className={`text-sm font-semibold ${HEADER_COLORS[col]}`}>{col}</span>

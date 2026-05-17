@@ -24,9 +24,7 @@ function NotePopover({
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        onClose();
-      }
+      if (ref.current && !ref.current.contains(e.target as Node)) onClose();
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -48,7 +46,7 @@ function NotePopover({
   return (
     <div
       ref={ref}
-      className="absolute right-0 top-8 z-50 w-72 bg-[#1c2333] border border-gray-700 rounded-lg shadow-xl p-3"
+      className="absolute right-0 top-8 z-50 w-72 max-w-[calc(100vw-2rem)] bg-[#1c2333] border border-gray-700 rounded-lg shadow-xl p-3"
     >
       <textarea
         value={note}
@@ -77,9 +75,7 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
   const today = new Date().toISOString().slice(0, 10);
 
   let filtered = applications;
-  if (filter !== 'All') {
-    filtered = filtered.filter((app) => app.status === filter);
-  }
+  if (filter !== 'All') filtered = filtered.filter((app) => app.status === filter);
   if (search) {
     filtered = filtered.filter(
       (app) =>
@@ -87,7 +83,6 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
         app.role.toLowerCase().includes(search.toLowerCase())
     );
   }
-
   filtered.sort((a, b) => {
     if (sortBy === 'score') return b.score - a.score;
     if (sortBy === 'date') return b.date.localeCompare(a.date);
@@ -115,11 +110,11 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
   return (
     <div>
       {/* Filters */}
-      <div className="mb-6 space-y-4">
+      <div className="mb-4 space-y-3">
         <div className="flex gap-2 flex-wrap">
           <button
             onClick={() => setFilter('All')}
-            className={`px-3 py-1 rounded-full text-sm font-medium transition ${
+            className={`px-3 py-1.5 rounded-full text-sm font-medium transition ${
               filter === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
             }`}
           >
@@ -129,7 +124,7 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition ${
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition ${
                 filter === status ? 'bg-blue-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               }`}
             >
@@ -138,28 +133,92 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
           ))}
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-2">
           <input
             type="text"
-            placeholder="Search company/role..."
+            placeholder="Search company or role..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 min-w-0 px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as 'score' | 'date' | 'company')}
-            className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="score">Sort by Score (High→Low)</option>
-            <option value="date">Sort by Date (New→Old)</option>
-            <option value="company">Sort by Company</option>
+            <option value="score">Score</option>
+            <option value="date">Date</option>
+            <option value="company">Company</option>
           </select>
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto bg-[#161b22] rounded-lg border border-gray-800">
+      {/* Mobile: card view */}
+      <div className="md:hidden space-y-2">
+        {filtered.map((app) => {
+          const ctx = contextMap[String(app.num)];
+          const isOverdue = ctx?.followUpDate && ctx.followUpDate <= today;
+          const hasNote = !!ctx?.notes;
+
+          return (
+            <div
+              key={app.num}
+              className="bg-[#161b22] rounded-lg border border-gray-800 p-4"
+            >
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <div className="flex-1 min-w-0">
+                  <a
+                    href={`/applications/${app.num}`}
+                    className="text-blue-400 font-semibold hover:underline text-base block truncate"
+                  >
+                    {app.company}
+                  </a>
+                  <p className="text-gray-500 text-xs mt-0.5 truncate">{app.role}</p>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <span className="text-blue-400 font-bold text-sm">{app.score.toFixed(1)}</span>
+                  <div className="relative">
+                    <button
+                      onClick={() => setOpenNoteId(openNoteId === app.num ? null : app.num)}
+                      className={`text-base ${hasNote ? 'opacity-100' : 'opacity-30'}`}
+                    >
+                      📝
+                    </button>
+                    {openNoteId === app.num && (
+                      <NotePopover
+                        appId={app.num}
+                        initialNote={ctx?.notes ?? ''}
+                        onClose={() => setOpenNoteId(null)}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-2">
+                <select
+                  value={app.status}
+                  onChange={(e) => handleStatusChange(app.num, e.target.value as Status)}
+                  disabled={updatingId === app.num}
+                  className="flex-1 min-w-0 text-sm px-2 py-2 rounded bg-gray-800 border border-gray-700 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                >
+                  {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
+                </select>
+
+                <div className="flex items-center gap-1.5 text-xs text-gray-500 shrink-0">
+                  {isOverdue && (
+                    <span title={`Follow-up: ${ctx.followUpDate}`} className="w-1.5 h-1.5 rounded-full bg-orange-500 inline-block" />
+                  )}
+                  <span>{app.date.slice(5)}</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop: table view */}
+      <div className="hidden md:block overflow-x-auto bg-[#161b22] rounded-lg border border-gray-800">
         <table className="w-full text-sm">
           <thead className="border-b border-gray-800">
             <tr>
@@ -179,16 +238,10 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
               const hasNote = !!ctx?.notes;
 
               return (
-                <tr
-                  key={app.num}
-                  className="border-b border-gray-800 hover:bg-gray-800/50 transition"
-                >
+                <tr key={app.num} className="border-b border-gray-800 hover:bg-gray-800/50 transition">
                   <td className="px-6 py-4 font-medium text-gray-400">{app.num}</td>
                   <td className="px-6 py-4">
-                    <a
-                      href={`/applications/${app.num}`}
-                      className="text-blue-400 hover:text-blue-300 hover:underline"
-                    >
+                    <a href={`/applications/${app.num}`} className="text-blue-400 hover:text-blue-300 hover:underline">
                       {app.company}
                     </a>
                   </td>
@@ -196,10 +249,7 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
                       <div className="w-16 bg-gray-700 rounded-full h-1.5">
-                        <div
-                          className="bg-blue-500 h-1.5 rounded-full"
-                          style={{ width: `${(app.score / 5) * 100}%` }}
-                        />
+                        <div className="bg-blue-500 h-1.5 rounded-full" style={{ width: `${(app.score / 5) * 100}%` }} />
                       </div>
                       <span className="font-semibold text-gray-200">{app.score.toFixed(1)}</span>
                     </div>
@@ -211,9 +261,7 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
                       disabled={updatingId === app.num}
                       className="text-sm px-2 py-1 rounded bg-gray-800 border border-gray-700 text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     >
-                      {statuses.map((status) => (
-                        <option key={status} value={status}>{status}</option>
-                      ))}
+                      {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </td>
                   <td className="px-6 py-4 text-gray-500 text-xs">
@@ -227,9 +275,7 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
                   <td className="px-4 py-4 relative">
                     <button
                       onClick={() => setOpenNoteId(openNoteId === app.num ? null : app.num)}
-                      className={`text-base leading-none transition ${
-                        hasNote ? 'opacity-100' : 'opacity-30 hover:opacity-70'
-                      }`}
+                      className={`text-base leading-none transition ${hasNote ? 'opacity-100' : 'opacity-30 hover:opacity-70'}`}
                       title={hasNote ? 'View/edit note' : 'Add note'}
                     >
                       📝
@@ -250,9 +296,7 @@ export default function ApplicationTable({ applications, contextMap = {}, onStat
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-12 text-gray-600">
-          No applications found
-        </div>
+        <div className="text-center py-12 text-gray-600">No applications found</div>
       )}
     </div>
   );

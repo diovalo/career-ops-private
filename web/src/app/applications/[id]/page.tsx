@@ -232,7 +232,7 @@ export default function ApplicationDetailPage() {
   const reportMatch = app.report.match(/\[(\d+)\]\(([^)]+)\)/);
 
   return (
-    <div className="p-6 max-w-2xl">
+    <div className="p-4 md:p-6 md:max-w-2xl">
       {/* Back link */}
       <a href="/dashboard" className="text-sm text-gray-500 hover:text-gray-300 mb-6 inline-flex items-center gap-1">
         ← Dashboard
@@ -355,21 +355,30 @@ export default function ApplicationDetailPage() {
       {/* Mode selector */}
       <div className="bg-[#161b22] rounded-lg border border-gray-800 p-4 mb-4">
         <p className="text-xs text-gray-500 uppercase tracking-wide mb-3">Next career-ops action</p>
-        <div className="flex gap-2 flex-wrap items-end">
-          <div className="flex flex-col gap-1 flex-1">
-            <label className="text-xs text-gray-500">Mode</label>
-            <select
-              value={ctx?.plannedMode ?? ''}
-              onChange={(e) => saveCtx({ plannedMode: e.target.value })}
-              className="px-3 py-1.5 bg-gray-800 border border-gray-700 rounded text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-2">
+            <div className="flex flex-col gap-1 flex-1">
+              <label className="text-xs text-gray-500">Mode</label>
+              <select
+                value={ctx?.plannedMode ?? ''}
+                onChange={(e) => saveCtx({ plannedMode: e.target.value })}
+                className="px-3 py-2.5 bg-gray-800 border border-gray-700 rounded text-sm text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              >
+                <option value="">— select mode —</option>
+                {CAREER_OPS_MODES.map((m) => (
+                  <option key={m} value={m}>{m}</option>
+                ))}
+              </select>
+            </div>
+            <button
+              onClick={copyCommand}
+              disabled={!ctx?.plannedMode}
+              className="self-end px-3 py-2.5 rounded bg-blue-700 hover:bg-blue-600 disabled:bg-gray-800 disabled:text-gray-600 text-white text-sm transition shrink-0"
             >
-              <option value="">— select mode —</option>
-              {CAREER_OPS_MODES.map((m) => (
-                <option key={m} value={m}>{m}</option>
-              ))}
-            </select>
+              {copied ? 'Copied!' : 'Copy'}
+            </button>
           </div>
-          <div className="flex flex-col gap-1 flex-1">
+          <div className="flex flex-col gap-1">
             <label className="text-xs text-gray-500">Note</label>
             <input
               type="text"
@@ -377,16 +386,9 @@ export default function ApplicationDetailPage() {
               placeholder="e.g. ask about remote policy"
               onChange={(e) => setCtx((c) => c ? { ...c, plannedNote: e.target.value } : c)}
               onBlur={(e) => saveCtx({ plannedNote: e.target.value })}
-              className="px-3 py-1.5 bg-gray-800 border border-gray-700 rounded text-sm text-gray-200 placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="px-3 py-2.5 bg-gray-800 border border-gray-700 rounded text-sm text-gray-200 placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
           </div>
-          <button
-            onClick={copyCommand}
-            disabled={!ctx?.plannedMode}
-            className="px-3 py-1.5 rounded bg-blue-700 hover:bg-blue-600 disabled:bg-gray-800 disabled:text-gray-600 text-white text-sm transition"
-          >
-            {copied ? 'Copied!' : 'Copy command'}
-          </button>
         </div>
         {ctx?.plannedMode && (
           <code className="mt-2 block text-xs text-gray-500 font-mono">

@@ -12,7 +12,7 @@ export default function AddCompanyPage() {
   const [result, setResult] = useState<{ ok: boolean; company?: string } | null>(null);
   const [error, setError] = useState('');
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!company.trim() || !role.trim()) return;
     setSubmitting(true);
@@ -43,7 +43,7 @@ export default function AddCompanyPage() {
   }
 
   return (
-    <div className="p-6 max-w-lg">
+    <div className="p-4 md:p-6 md:max-w-lg">
       <a href="/dashboard" className="text-sm text-gray-500 hover:text-gray-300 mb-6 inline-flex items-center gap-1">
         ← Dashboard
       </a>
