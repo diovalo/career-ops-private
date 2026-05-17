@@ -2,6 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 37 | 2026-05-17 | Huawei | Working Student / Intern - AI (Industrial Anomaly Inspection) | 2.4/5 | SKIP | ❌ | [037](reports/037-huawei-werkstudent-ai-2026-05-17.md) | On-site Weilheim (500 km from Koblenz) + PyTorch/DL stack gap |
 | 35 | 2026-05-05 | Telespazio Germany | Werkstudent / Praktikum SW Dev & Validation | 4.0/5 | Evaluated | ✅ | [035](reports/011-konaktiva-darmstadt-batch-2026-05-05.md) | Konaktiva Thu C11. Darmstadt local, ESA-adjacent. CV+cover ready: cover-telespazio-swdev-2026-05-05.pdf |
 | 34 | 2026-05-05 | GFT Technologies | Werkstudent Tech Office | 4.0/5 | Evaluated | ✅ | [034](reports/011-konaktiva-darmstadt-batch-2026-05-05.md) | Konaktiva Thu B1. Eschborn, financial services IT. CV+cover ready: cover-gft-techoffice-2026-05-05.pdf |
 | 33 | 2026-05-05 | ABB | Internship Software Engineer | 4.0/5 | Evaluated | ✅ | [033](reports/011-konaktiva-darmstadt-batch-2026-05-05.md) | Konaktiva Thu D12. Ladenburg, R&D software. CV+cover ready: cover-abb-swintern-2026-05-05.pdf |
