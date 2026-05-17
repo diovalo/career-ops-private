@@ -1,0 +1,33 @@
+Huawei’s Manufacturing Technology Center in Weilheim is responsible for advanced technical research. Our mission is to implement latest R&D ideas with modern automation technology. Our Machine Intelligent Technologies team specializes in AI innovation for industrial applications, leveraging SOTA algorithms to solve real-world manufacturing challenges. We have extensive experience in industrial defect detection, quality control, and smart manufacturing. Therefore, we are looking for an enthusiastic and highly motivated to work in Industrial Anomaly Inspection Models Dev & Applications as Intern or Working Student.
+
+Main Responsibilities:
+• Support industrial dataset cleaning and pre-processing workflows
+• Assist in building AI applications for manufacturing defect detection and anomaly identification
+• Participate in development of core modules of AI models, including model training, evaluation, and deployment pipelines
+• Optimize model inference performance for edge devices
+• Research and explore the latest unsupervised anomaly detection (UAD) applications in industrial domains
+
+Requirements:
+• Currently pursuing Bachelor’s or Master’s degree in Computer Science, AI, Automation, or related field
+• Proficient in deep learning frameworks (e.g. PyTorch) and has computer vision/LLM project experience
+• Familiar with mainstream architectures, such as Transformers, YOLO, ResNet
+• Experience with multimodal models (CLIP, ViLT, etc.) and knowledge of model quantization, pruning, and optimization techniques would be a plus
+• Some exposure/experience in Docker and Linux development environments is beneficial
+• Strong Python programming skills and experience with data processing libraries
+• Experience processing industrial datasets and participation real-world projects
+• Genuine interest in industrial AI applications and willingness to learn domain knowledge
+• Detail-oriented with excellent team work and communication skills in English
+
+Disciplines
+Computer Science, Data, AI, Engineering & Technology
+
+Kontakt
+Huawei - Weilheim Manufacturing Technology Center
+Leprosenweg 1
+82362 Weilheim i. OB, Germany
+
+Gabryella Tombeng Emilton
+015 904 852 189
+recruitingwmtc@huawei.com
+
+Please send your application (CV + Transcript) preferably in English
