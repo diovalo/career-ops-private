@@ -2,7 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
-| 38 | 2026-05-19 | Merantix AG | Working Student AI Platform Engineer (m/f/d) | 4.2/5 | Evaluated | ✅ | [038](reports/038-merantix-2026-05-19.md) | Strong match. Python + CI/CD + analytics all covered. career-ops dashboard is direct proof. Apply promptly. cv-dhawal-merantix-2026-05-19.pdf |
+| 38 | 2026-05-19 | Merantix AG | Working Student AI Platform Engineer (m/f/d) | 4.2/5 | Applied | ✅ | [038](reports/038-merantix-2026-05-19.md) | Applied 2026-05-19. cv-dhawal-merantix-2026-05-19.pdf + cover-merantix-aiplatform-2026-05-19.pdf |
 | 39 | 2026-05-19 | Mercedes-Benz Tech Innovation | Working Student AI Engineer (m/f/d) | 3.8/5 | Evaluated | ❌ | [039](reports/039-mercedes-benz-tech-2026-05-19.md) | Good match. LangChain gap — build small RAG demo before applying. NLP + MCP orchestration is strong adjacent. |
 | 40 | 2026-05-19 | Rohde & Schwarz | Working Student Baseband Software Testing (m/f/d) | 3.3/5 | Evaluated | ❌ | [040](reports/040-rohde-schwarz-2026-05-19.md) | Below threshold. C++ undemonstrated + telecom domain steep. Skip unless interested in 5G/embedded. |
 | 37 | 2026-05-17 | Huawei | Working Student / Intern - AI (Industrial Anomaly Inspection) | 2.4/5 | SKIP | ❌ | [037](reports/037-huawei-werkstudent-ai-2026-05-17.md) | On-site Weilheim (500 km from Koblenz) + PyTorch/DL stack gap |
