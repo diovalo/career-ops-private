@@ -9,7 +9,7 @@
   },
   "40": {
     "companyUrl": "https://www.stepstone.de/stellenangebote--Working-Student-Baseband-Software-testing-and-integration-m-f-d-Muenchen-Rohde-Schwarz-GmbH-Co-KG--13966700-inline.html",
-    "updatedAt": "2026-05-19T15:33:40.086Z",
-    "plannedNote": ""
+    "updatedAt": "2026-05-19T15:33:55.577Z",
+    "plannedNote": "At Rohde & Schwarz, we develop and produce solutions in the fields of Test & Measurement, Technology Systems, and Networks & Cybersecurity – driven by the vision of a safer and connected world. From software to final production, our more than 15,000 employees create products and systems that set global standards and enable technological sovereignty for industrial, regulatory, and government customers worldwide. Our headquarters, located in the heart of Munich, also serves as our main development site. Join our Test & Measurement Division in Munich (Germany) at the earliest possible date. Your tasks - Support NR Signaling Stack CI/CD improvements - Participate in the design of a new CI/CD process - Assist on implementation and integration of a new build framework - Assist in integrating virtual UEs and Open RAN devices  Your qualifications - Academic studies in computer science, informatics, electrical engineering or comparable fields of studies - Good proficiency using AI (copilot, agents) for development and basic understanding of AI/ML concepts - Good proficiency in Python as well as know-how on C++ - Fair understanding of conan, cmake and static code analysis tools like SonarQube - A foundational understanding of DevOps practices and tools would be a plus - Ability to work independently with a strong sense of ownership - Good command of spoken and written English and/or German"
   }
 }
