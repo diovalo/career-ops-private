@@ -73,6 +73,8 @@ Inbox of pending URLs to evaluate.
 - [ ] https://www.stepstone.de/stellenangebote--Werkstudent-AI-Automatisierung-m-w-x-Oberkochen-Baden-Wuerttemberg-ZEISS--13933091-inline.html | ZEISS | Werkstudent AI & Automatisierung (m/w/x)
 - [ ] https://www.stepstone.de/stellenangebote--Werkstudentin-AI-assisted-Software-Coordination-for-Drive-Systems-Sindelfingen-Mercedes-Benz-AG--13937578-inline.html | Mercedes-Benz AG | Werkstudent AI-assisted Software Coordination for Drive Systems
 - [ ] https://www.stepstone.de/stellenangebote--Praktikantin-Cloud-AI-Analytics-Mercedes-Benz-Operating-System-Sindelfingen-Mercedes-Benz-AG--13958711-inline.html | Mercedes-Benz AG | Praktikant Cloud AI & Analytics MB.OS
+- [ ] https://join.com/companies/cognitxai/15491098-ai-llm-engineering-werkstudent | CognitX AI | AI / LLM Engineering (Werkstudent) [REMOTE]
+- [ ] https://de.indeed.com/viewjob?jk=4e6665a368838a7d | Fresenius Medical Care | Full-Stack Developer Intern (AI / GenAI Systems)
 
 ## Procesadas
 - [x] #036 | https://infineon.eightfold.ai/careers/job?pid=563808970681336 | Infineon | Working Student Software Development (HRC1635818) | 2.8/5 | PDF ❌
