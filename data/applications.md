@@ -2,6 +2,9 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 38 | 2026-05-19 | Merantix AG | Working Student AI Platform Engineer (m/f/d) | — | Evaluated | ❌ |  | Sourced via StepStone. English JD, international team, AI Campus Berlin. Cloud infra + ML tooling. Pending evaluation. |
+| 39 | 2026-05-19 | Mercedes-Benz Tech Innovation | Working Student AI Engineer (m/f/d) | — | Evaluated | ❌ |  | Sourced via StepStone. English JD. RAG / LangChain / multi-agent / Python / Databricks. Starts June 2026. Pending evaluation. |
+| 40 | 2026-05-19 | Rohde & Schwarz | Working Student Baseband Software Testing (m/f/d) | — | Evaluated | ❌ |  | Sourced via StepStone. English JD. CI/CD, NR Signaling Stack, software testing. München. Pending evaluation. |
 | 37 | 2026-05-17 | Huawei | Working Student / Intern - AI (Industrial Anomaly Inspection) | 2.4/5 | SKIP | ❌ | [037](reports/037-huawei-werkstudent-ai-2026-05-17.md) | On-site Weilheim (500 km from Koblenz) + PyTorch/DL stack gap |
 | 35 | 2026-05-05 | Telespazio Germany | Werkstudent / Praktikum SW Dev & Validation | 4.0/5 | Evaluated | ✅ | [035](reports/011-konaktiva-darmstadt-batch-2026-05-05.md) | Konaktiva Thu C11. Darmstadt local, ESA-adjacent. CV+cover ready: cover-telespazio-swdev-2026-05-05.pdf |
 | 34 | 2026-05-05 | GFT Technologies | Werkstudent Tech Office | 4.0/5 | Evaluated | ✅ | [034](reports/011-konaktiva-darmstadt-batch-2026-05-05.md) | Konaktiva Thu B1. Eschborn, financial services IT. CV+cover ready: cover-gft-techoffice-2026-05-05.pdf |
