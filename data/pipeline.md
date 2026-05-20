@@ -73,7 +73,7 @@ Inbox of pending URLs to evaluate.
 - [ ] https://www.stepstone.de/stellenangebote--Werkstudentin-AI-assisted-Software-Coordination-for-Drive-Systems-Sindelfingen-Mercedes-Benz-AG--13937578-inline.html | Mercedes-Benz AG | Werkstudent AI-assisted Software Coordination for Drive Systems
 - [ ] https://www.stepstone.de/stellenangebote--Praktikantin-Cloud-AI-Analytics-Mercedes-Benz-Operating-System-Sindelfingen-Mercedes-Benz-AG--13958711-inline.html | Mercedes-Benz AG | Praktikant Cloud AI & Analytics MB.OS
 - [ ] https://de.indeed.com/viewjob?jk=4e6665a368838a7d | Fresenius Medical Care | Full-Stack Developer Intern (AI / GenAI Systems)
-- [ ] https://www.scout24.com/en/career/jobs/engineering/working-student-ai-engineering-m-w-d-7795627 | Scout24 (Sprengnetter) | Working Student AI Engineering (m/w/d)
+- [x] #044 | https://www.scout24.com/en/career/jobs/engineering/working-student-ai-engineering-m-w-d-7795627 | Scout24 (Sprengnetter) | Working Student AI Engineering (m/w/d) | 3.8/5 | PDF ✅
 - [ ] https://www.stepstone.de/stellenangebote--Werkstudent-Softwareentwicklung-KI-w-m-d-Berlin-Deutschland-GEBIT-Solutions-GmbH-Hauptsitz--13653176-inline.html | GEBIT Solutions | Werkstudent Softwareentwicklung / KI (w/m/d)
 
 ## Procesadas
