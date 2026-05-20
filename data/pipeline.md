@@ -67,7 +67,7 @@ Inbox of pending URLs to evaluate.
 - [ ] https://jobs.lever.co/spotify/3707cd2f-202a-4aec-9de8-bf73a5a6e922 | Spotify | Software Engineer - Platform Infrastructure
 - [ ] https://jobs.lever.co/pigment/874e5c44-7239-475d-8eea-97ba9168875c | Pigment | Supply Chain Solution Consultant
 - [ ] https://to.indeed.com/aakm7vxpt4z4 | Temedica GmbH | Working Student - AI Engineer (f/m/d)
-- [ ] https://to.indeed.com/aaxnx2pg6rc2 | mala markets | Werkstudent AI Engineer (m/w/d)
+- [x] #045 | https://de.indeed.com/viewjob?jk=a5100ca82a93e950 | mala markets | Werkstudent AI Engineer (m/w/d) | 4.6/5 | PDF ✅
 - [ ] https://to.indeed.com/aasmnsq7gm77 | ARRK Engineering | Werkstudent Machine Learning Automated Driving (m/w/d)
 - [ ] https://www.stepstone.de/stellenangebote--Werkstudent-AI-Automatisierung-m-w-x-Oberkochen-Baden-Wuerttemberg-ZEISS--13933091-inline.html | ZEISS | Werkstudent AI & Automatisierung (m/w/x)
 - [ ] https://www.stepstone.de/stellenangebote--Werkstudentin-AI-assisted-Software-Coordination-for-Drive-Systems-Sindelfingen-Mercedes-Benz-AG--13937578-inline.html | Mercedes-Benz AG | Werkstudent AI-assisted Software Coordination for Drive Systems

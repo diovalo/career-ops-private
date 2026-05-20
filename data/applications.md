@@ -2,6 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 45 | 2026-05-20 | mala markets | Werkstudent AI Engineer (m/w/d) | 4.6/5 | Evaluated | ✅ | [045](reports/045-malamarkets-werkstudent-ai-2026-05-20.md) | Remote-friendly, Dortmund. Claude Code + MCP exact match. Salary €1500-1800/month stated. cv-dhawal-malamarkets-2026-05-20.pdf |
 | 44 | 2026-05-20 | Scout24 (Sprengnetter) | Working Student AI Engineering (m/w/d) | 3.8/5 | Applied | ✅ | [044](reports/044-scout24-werkstudent-ai-eng-2026-05-20.md) | Bad Neuenahr-Ahrweiler (35km from Koblenz) + Berlin + Cologne. Hybrid 2d/week. LLM API + model validation match. cv-dhawal-scout24-2026-05-20.pdf + cover-scout24-ai-2026-05-20.pdf |
 | 43 | 2026-05-20 | 1KOMMA5° | Working Student Software Engineering (m/f/d) | 4.0/5 | Discarded | ✅ | [043](reports/043-1komma5-werkstudent-swe-2026-05-20.md) | Hamburg + remote. Posting closed. cv-dhawal-1komma5-2026-05-20.pdf + cover-1komma5-swe-2026-05-20.pdf |
 | 42 | 2026-05-20 | CognitX AI | AI / LLM Engineering (Werkstudent) | 4.2/5 | Applied | ✅ | [042](reports/042-cognitxai-werkstudent-llm-2026-05-20.md) | Applied 2026-05-20. Remote Germany. MCP explicitly required, exact match. cv-dhawal-cognitxai-2026-05-20.pdf + cover-cognitxai-llm-2026-05-20.pdf |
