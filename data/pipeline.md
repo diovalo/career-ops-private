@@ -67,7 +67,6 @@ Inbox of pending URLs to evaluate.
 - [ ] https://jobs.lever.co/spotify/3707cd2f-202a-4aec-9de8-bf73a5a6e922 | Spotify | Software Engineer - Platform Infrastructure
 - [ ] https://jobs.lever.co/pigment/874e5c44-7239-475d-8eea-97ba9168875c | Pigment | Supply Chain Solution Consultant
 - [ ] https://to.indeed.com/aakm7vxpt4z4 | Temedica GmbH | Working Student - AI Engineer (f/m/d)
-- [ ] https://to.indeed.com/aay9njv7gb2l | 1KOMMA5° | Working Student Software Engineering (m/f/d)
 - [ ] https://to.indeed.com/aaxnx2pg6rc2 | mala markets | Werkstudent AI Engineer (m/w/d)
 - [ ] https://to.indeed.com/aasmnsq7gm77 | ARRK Engineering | Werkstudent Machine Learning Automated Driving (m/w/d)
 - [ ] https://www.stepstone.de/stellenangebote--Werkstudent-AI-Automatisierung-m-w-x-Oberkochen-Baden-Wuerttemberg-ZEISS--13933091-inline.html | ZEISS | Werkstudent AI & Automatisierung (m/w/x)
@@ -81,3 +80,4 @@ Inbox of pending URLs to evaluate.
 - [x] #036 | https://infineon.eightfold.ai/careers/job?pid=563808970681336 | Infineon | Working Student Software Development (HRC1635818) | 2.8/5 | PDF ❌
 - [x] #037 | https://jobportal.community.tum.de/show/333467?tracking=1 | Huawei | Working Student / Intern - AI | 2.4/5 | PDF ❌
 - [x] #042 | https://join.com/companies/cognitxai/15491098-ai-llm-engineering-werkstudent | CognitX AI | AI / LLM Engineering (Werkstudent) | 4.2/5 | PDF ✅
+- [x] #043 | https://to.indeed.com/aay9njv7gb2l | 1KOMMA5° | Working Student Software Engineering (m/f/d) | 4.0/5 | PDF ✅

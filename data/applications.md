@@ -2,6 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 43 | 2026-05-20 | 1KOMMA5° | Working Student Software Engineering (m/f/d) | 4.0/5 | Evaluated | ✅ | [043](reports/043-1komma5-werkstudent-swe-2026-05-20.md) | Hamburg + remote. English mandatory. IoT degree is key differentiator. NestJS/GCP gaps minor. cv-dhawal-1komma5-2026-05-20.pdf + cover-1komma5-swe-2026-05-20.pdf |
 | 42 | 2026-05-20 | CognitX AI | AI / LLM Engineering (Werkstudent) | 4.2/5 | Applied | ✅ | [042](reports/042-cognitxai-werkstudent-llm-2026-05-20.md) | Applied 2026-05-20. Remote Germany. MCP explicitly required, exact match. cv-dhawal-cognitxai-2026-05-20.pdf + cover-cognitxai-llm-2026-05-20.pdf |
 | 41 | 2026-05-19 | Enpal | Werkstudent Automation, AI & Data Analytics (w/m/d) | 4.0/5 | Applied | ✅ | [041](reports/041-enpal-werkstudent-automation-2026-05-19.md) | Applied 2026-05-19. No cover letter requested. cv-dhawal-enpal-2026-05-19.pdf ready. Start date: Sep 2026. |
 | 38 | 2026-05-19 | Merantix AG | Working Student AI Platform Engineer (m/f/d) | 4.2/5 | Applied | ✅ | [038](reports/038-merantix-2026-05-19.md) | Applied 2026-05-19. cv-dhawal-merantix-2026-05-19.pdf + cover-merantix-aiplatform-2026-05-19.pdf |
