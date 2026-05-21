@@ -2,6 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 47 | 2026-05-21 | Taxfix | Automation Engineer (Working Student) | 3.2/5 | SKIP | ❌ | N/A | Berlin hybrid. HR/People Ops internal tooling, not AI engineering. Low-code gap. Score below threshold. |
 | 46 | 2026-05-21 | Temedica GmbH | Working Student AI and Agentic Engineering (f/d/m) | 4.0/5 | Applied | ✅ | [046](reports/046-temedica-werkstudent-ai-2026-05-21.md) | Munich digital health startup. Hybrid anywhere Germany. cv-dhawal-temedica-2026-05-21.pdf + cover-temedica-ai-2026-05-21.pdf + worksample-temedica-2026-05-21.pdf |
 | 45 | 2026-05-20 | mala markets | Werkstudent AI Engineer (m/w/d) | 4.6/5 | Applied | ✅ | [045](reports/045-malamarkets-werkstudent-ai-2026-05-20.md) | Remote-friendly, Dortmund. Claude Code + MCP exact match. Salary €1500-1800/month stated. cv-dhawal-malamarkets-2026-05-20.pdf |
 | 44 | 2026-05-20 | Scout24 (Sprengnetter) | Working Student AI Engineering (m/w/d) | 3.8/5 | Applied | ✅ | [044](reports/044-scout24-werkstudent-ai-eng-2026-05-20.md) | Bad Neuenahr-Ahrweiler (35km from Koblenz) + Berlin + Cologne. Hybrid 2d/week. LLM API + model validation match. cv-dhawal-scout24-2026-05-20.pdf + cover-scout24-ai-2026-05-20.pdf |
