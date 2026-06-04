@@ -3,6 +3,17 @@
 Inbox of pending URLs to evaluate.
 
 
+## Fresh — June 4, 2026 (today/yesterday only)
+
+### 4.0+ fit, English-friendly, confirmed fresh
+- [ ] https://de.indeed.com/jobs?q=AI+Engineering+Werkstudent+agentic&l=Berlin | Topoteretes UG (Cognee) | AI Engineering Workingstudent | Berlin hybrid | Posted June 4 2026 | ~4.1/5 — Cognee = open-source knowledge graph / memory engine for LLM agents; English-first international startup; €10k–20k/year; exact archetype match (agentic AI, Python, LLM tools in production); relocation to Berlin needed periodically
+
+### Fresh but filtered
+- [x] SKIP | Reply Deutschland SE — Werkstudent Generative AI Google Cloud — Berlin/München — June 4 — Fluent German required (hard blocker)
+- [x] SKIP | metapeak — Werkstudent AI & Automation — Heidelberg — June 3-4 — Job description in German only; likely German required; verify before applying
+- [x] SKIP | Bundesdruckerei GmbH — Werkstudent Computer Vision & Deep Learning — Munich — June 3-4 — PyTorch/CNN stack gap (hard blocker)
+
+
 ## Scan 2026-06-04 — Indeed / Stepstone / LinkedIn / YC / Portal Scan
 
 ### Indeed — Strong fits
