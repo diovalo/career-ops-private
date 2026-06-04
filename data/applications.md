@@ -3,7 +3,7 @@
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
 | 67 | 2026-06-02 | Proxima Fusion | Intern Enterprise AI Team | 4.5/5 | Applied | ✅ | [067](reports/067-proxima-fusion-enterprise-ai-2026-06-02.md) | Munich deep-tech startup. Python + Claude + MCP — exact archetype match. APPLY first. |
-| 68 | 2026-06-02 | SAP | Working Student AI-based Quality Evaluation for LLM Code Changes (HANA Cloud) | 4.2/5 | Evaluated | ❌ | [068](reports/068-sap-hana-llm-eval-2026-06-02.md) | Walldorf. Python + MLflow + Claude Code. LLMOps archetype match. Submit CV + cover + transcripts. |
+| 68 | 2026-06-02 | SAP | Working Student AI-based Quality Evaluation for LLM Code Changes (HANA Cloud) | 4.2/5 | Applied | ❌ | [068](reports/068-sap-hana-llm-eval-2026-06-02.md) | Walldorf. Python + MLflow + Claude Code. LLMOps archetype match. Submit CV + cover + transcripts. |
 | 69 | 2026-06-02 | SAP | Working Student AI Developer @ Signavio | 3.5/5 | Evaluated | ❌ | [069](reports/069-sap-signavio-ai-dev-2026-06-02.md) | Berlin. Python + APIs. English only. SAP Joule/ecosystem gap. Medium priority. |
 | 70 | 2026-06-02 | SAP | Working Student Developer for AI Use Cases | 3.5/5 | Evaluated | ❌ | [070](reports/070-sap-ai-use-cases-2026-06-02.md) | Walldorf. Node.js + SAP CAP. English required. Fresh posting (May 28). Medium priority. |
 | 71 | 2026-06-02 | Fresenius Medical Care | Full-Stack Developer Intern (AI/GenAI Systems) | 2.5/5 | SKIP | ❌ | [071](reports/071-fresenius-fullstack-intern-2026-06-02.md) | SKIP — full-time 37.5h/week (not Werkstudent); incompatible with active MSc semester. |
