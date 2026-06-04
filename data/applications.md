@@ -2,7 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
-| 73 | 2026-06-04 | Cognee (Topoteretes UG) | Working Student AI Engineering | 3.8/5 | Evaluated | ✅ | [073](reports/073-cognee-topoteretes-2026-06-04.md) | Berlin hybrid. Python + MCP + Cognee knowledge graph engine. DevRel component (~30%). Verify comp upper bound before applying. |
+| 73 | 2026-06-04 | Cognee (Topoteretes UG) | Working Student AI Engineering | 3.8/5 | Applied | ✅ | [073](reports/073-cognee-topoteretes-2026-06-04.md) | Applied 2026-06-04. Berlin hybrid. Python + MCP + Cognee knowledge graph engine. cv-dhawal-cognee-2026-06-04.pdf + cover-cognee-ai-2026-06-04.pdf |
 | 67 | 2026-06-02 | Proxima Fusion | Intern Enterprise AI Team | 4.5/5 | Applied | ✅ | [067](reports/067-proxima-fusion-enterprise-ai-2026-06-02.md) | Munich deep-tech startup. Python + Claude + MCP — exact archetype match. APPLY first. |
 | 68 | 2026-06-02 | SAP | Working Student AI-based Quality Evaluation for LLM Code Changes (HANA Cloud) | 4.2/5 | Applied | ✅ | [068](reports/068-sap-hana-llm-eval-2026-06-02.md) | Walldorf. Python + MLflow + Claude Code. LLMOps archetype match. Submit CV + cover + transcripts. |
 | 69 | 2026-06-02 | SAP | Working Student AI Developer @ Signavio | 3.5/5 | Evaluated | ❌ | [069](reports/069-sap-signavio-ai-dev-2026-06-02.md) | Berlin. Python + APIs. English only. SAP Joule/ecosystem gap. Medium priority. |
