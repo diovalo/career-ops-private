@@ -282,3 +282,4 @@ Inbox of pending URLs to evaluate.
 ## Procesadas
 
 Moved to `data/pipeline-processed.tsv` to save context. View with: `node -e "const fs=require('fs');console.log(fs.readFileSync('data/pipeline-processed.tsv','utf-8'))"`
+- [ ] Siemens  — Working Student (f/m/d) IT tool development & Digitalization | https://jobs.siemens.com/en_US/externaljobs/JobDetail/507832 [JD pasted] (added 2026-06-08)
