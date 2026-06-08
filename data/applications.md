@@ -71,3 +71,4 @@
 | 5 | 2026-04-30 | HelloFresh | AI Operations & Automation Intern | 1.5/5 | Discarded | ❌ | [005](reports/005-hellofresh-2026-04-30.md) | Skip — NYC role, US work auth required (candidate on German student visa) |
 | 6 | 2026-04-30 | Celonis | AI & Management Consulting Intern (Value Engineering - DACH Market) | 2.4/5 | Discarded | ❌ | [006](reports/006-celonis-mgmt-consulting-2026-04-30.md) | Skip — German business-fluent required (candidate A1-A2) |
 | 7 | 2026-04-30 | Celonis | Applied AI Solution Consulting Intern (DACH Market) | 2.4/5 | Discarded | ❌ | [007](reports/007-celonis-applied-ai-2026-04-30.md) | Skip — German business-fluent required (candidate A1-A2) |
+| 74 | 2026-06-08 | valantic | Werkstudent AI Engineering & Cloud Prototyping | 3.5/5 | Applied | ✅ | [074](reports/074-valantic-ai-engineering-2026-06-08.md) | Applied 2026-06-08. SAP AI team. Node.js/Python/LLM APIs match; German A1-A2 disclosed honestly. |
