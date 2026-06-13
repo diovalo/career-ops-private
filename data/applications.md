@@ -2,6 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 76 | 2026-06-10 | Siemens DIS | Working Student Low Code/AI for Manufacturing | 3.8/5 | Evaluated | ✅ | [076](reports/076-siemens-dis-lowcode-ai-2026-06-10.md) | Munich on-site. €17/hr explicit. IIoT degree = rare differentiator. Mendix gap is soft. Apply with referral. |
 | 73 | 2026-06-04 | Cognee (Topoteretes UG) | Working Student AI Engineering | 3.8/5 | Applied | ✅ | [073](reports/073-cognee-topoteretes-2026-06-04.md) | Applied 2026-06-04. Berlin hybrid. Python + MCP + Cognee knowledge graph engine. cv-dhawal-cognee-2026-06-04.pdf + cover-cognee-ai-2026-06-04.pdf |
 | 67 | 2026-06-02 | Proxima Fusion | Intern Enterprise AI Team | 4.5/5 | Rejected | ✅ | [067](reports/067-proxima-fusion-enterprise-ai-2026-06-02.md) | Rejected 2026-06-05. Applied 2026-06-02 (3 days). |
 | 68 | 2026-06-02 | SAP | Working Student AI-based Quality Evaluation for LLM Code Changes (HANA Cloud) | 4.2/5 | Applied | ✅ | [068](reports/068-sap-hana-llm-eval-2026-06-02.md) | Walldorf. Python + MLflow + Claude Code. LLMOps archetype match. Submit CV + cover + transcripts. |
@@ -13,7 +14,7 @@
 | 64 | 2026-06-01 | Quantum Systems GmbH | Working Student Software Engineering (m/f/d) | 2.6/5 | SKIP | ❌ | [064](reports/064-quantum-systems-2026-06-01.md) | SKIP — CV/Jetson stack absent (PyTorch, OpenCV, edge ML); defense UAV domain mismatch |
 | 65 | 2026-06-01 | Yatta Solutions GmbH | Working Student Software Developer (m/f/d) | 3.0/5 | Discarded | ❌ | [065](reports/065-yatta-solutions-2026-06-01.md) | Low priority — good tech match (React/Python/Java), no AI focus; apply only if pipeline dries up |
 | 66 | 2026-06-01 | red pepper GmbH | Werkstudent AI Operations & Workflow Automation (m/w/d) | 2.6/5 | SKIP | ❌ | [066](reports/066-red-pepper-ai-automation-2026-06-01.md) | SKIP — German required (hard blocker); non-tech consulting firm limits career value |
-| 59 | 2026-05-30 | Heuft Systemtechnik | Working Student Software/ML (Speculative) | 3.2/5 | Applied | ❌ | — | Applied 2026-06-01 via career page unsolicited section. Mandy Ritt (HR) contact from Karrieretag Koblenz. B2 German flagged; honest disclosure in cover letter. |
+| 59 | 2026-05-30 | Heuft Systemtechnik | Working Student Software/ML (Speculative) | 3.2/5 | Rejected | ❌ | — | Applied 2026-06-01 via career page unsolicited section. Mandy Ritt (HR) contact from Karrieretag Koblenz. B2 German flagged; honest disclosure in cover letter. Rejected 2026-06-14. |
 | 56 | 2026-05-24 | Fraunhofer SIT | Working Student NLP | 4.2/5 | Discarded | ❌ | [056](reports/056-fraunhofer-sit-2026-05-24.md) | Posting expired before application submitted |
 | 57 | 2026-05-24 | deeplify | Working Student ML Engineer | 3.6/5 | Evaluated | ❌ | [057](reports/057-deeplify-2026-05-24.md) | Industrial CV gap; exceptional comp €28-35/hr; English WP; apply with calibrated expectations |
 | 58 | 2026-05-24 | 1KOMMA5° | Working Student Data Science Forecasting | 4.1/5 | Applied | ✅ | [058](reports/058-1komma5-2026-05-24.md) | Strong Python/ML fit; time-series gap acceptable at WS level; English workplace; Hamburg; apply |
@@ -72,4 +73,4 @@
 | 6 | 2026-04-30 | Celonis | AI & Management Consulting Intern (Value Engineering - DACH Market) | 2.4/5 | Discarded | ❌ | [006](reports/006-celonis-mgmt-consulting-2026-04-30.md) | Skip — German business-fluent required (candidate A1-A2) |
 | 7 | 2026-04-30 | Celonis | Applied AI Solution Consulting Intern (DACH Market) | 2.4/5 | Discarded | ❌ | [007](reports/007-celonis-applied-ai-2026-04-30.md) | Skip — German business-fluent required (candidate A1-A2) |
 | 74 | 2026-06-08 | valantic | Werkstudent AI Engineering & Cloud Prototyping | 3.5/5 | Applied | ✅ | [074](reports/074-valantic-ai-engineering-2026-06-08.md) | Applied 2026-06-08. SAP AI team. Node.js/Python/LLM APIs match; German A1-A2 disclosed honestly. |
-| 75 | 2026-06-08 | ROCKSOLID Personalvermittlung | Werkstudent IT / Internal Dev & Automation | 3.7/5 | Applied | ✅ | [075](reports/075-rocksolid-werkstudent-it-2026-06-08.md) | Applied 2026-06-08. Email to karriere@rocksolid-personal.de. €17/hr; storytelling email in German. |
+| 75 | 2026-06-08 | ROCKSOLID Personalvermittlung | Werkstudent IT / Internal Dev & Automation | 3.7/5 | Rejected | ✅ | [075](reports/075-rocksolid-werkstudent-it-2026-06-08.md) | Applied 2026-06-08. Email to karriere@rocksolid-personal.de. €17/hr; storytelling email in German. Rejected 2026-06-14. |
