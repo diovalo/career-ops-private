@@ -20,5 +20,9 @@
   "43": {
     "updatedAt": "2026-05-20T17:31:52.854Z",
     "notes": "The job application is closed"
+  },
+  "45": {
+    "updatedAt": "2026-06-15T20:53:26.543Z",
+    "plannedMode": "followup"
   }
 }
