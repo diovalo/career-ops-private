@@ -22,7 +22,8 @@
     "notes": "The job application is closed"
   },
   "45": {
-    "updatedAt": "2026-06-15T20:53:26.543Z",
-    "plannedMode": "followup"
+    "updatedAt": "2026-06-15T20:53:34.410Z",
+    "plannedMode": "followup",
+    "plannedNote": ""
   }
 }
