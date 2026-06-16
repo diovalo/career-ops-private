@@ -27,6 +27,7 @@ export default function ReferralsPage() {
   const [referrers, setReferrers] = useState<Referrer[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState<Referrer['status'] | null>(null);
 
   useEffect(() => {
     fetch('/api/referrals')
@@ -68,7 +69,8 @@ export default function ReferralsPage() {
   const inProgress = referrers.filter((r) => r.status === 'in_progress').length;
   const yetToContact = referrers.filter((r) => r.status === 'yet_to_contact').length;
 
-  const sorted = [...referrers].sort(
+  const filtered = activeFilter ? referrers.filter((r) => r.status === activeFilter) : referrers;
+  const sorted = [...filtered].sort(
     (a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status)
   );
 
@@ -79,20 +81,41 @@ export default function ReferralsPage() {
         <p className="text-sm text-gray-500">Network contacts who can provide referrals. Click a badge to change status.</p>
       </div>
 
-      {/* Stats row */}
+      {/* Filter chips */}
       <div className="flex gap-3 mb-6 flex-wrap">
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-900/40 border border-green-800">
+        <button
+          onClick={() => setActiveFilter(activeFilter === 'done' ? null : 'done')}
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition cursor-pointer ${
+            activeFilter === 'done'
+              ? 'bg-green-700 border-green-500 text-white'
+              : 'bg-green-900/40 border-green-800 text-green-400 hover:bg-green-900/70'
+          }`}
+        >
           <span className="w-2 h-2 rounded-full bg-green-400" />
-          <span className="text-sm text-green-400 font-medium">{done} Done</span>
-        </div>
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-900/40 border border-yellow-800">
+          <span className="text-sm font-medium">{done} Done</span>
+        </button>
+        <button
+          onClick={() => setActiveFilter(activeFilter === 'in_progress' ? null : 'in_progress')}
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition cursor-pointer ${
+            activeFilter === 'in_progress'
+              ? 'bg-yellow-700 border-yellow-500 text-white'
+              : 'bg-yellow-900/40 border-yellow-800 text-yellow-400 hover:bg-yellow-900/70'
+          }`}
+        >
           <span className="w-2 h-2 rounded-full bg-yellow-400" />
-          <span className="text-sm text-yellow-400 font-medium">{inProgress} In Progress</span>
-        </div>
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-800 border border-gray-700">
+          <span className="text-sm font-medium">{inProgress} In Progress</span>
+        </button>
+        <button
+          onClick={() => setActiveFilter(activeFilter === 'yet_to_contact' ? null : 'yet_to_contact')}
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-full border transition cursor-pointer ${
+            activeFilter === 'yet_to_contact'
+              ? 'bg-gray-600 border-gray-400 text-white'
+              : 'bg-gray-800 border-gray-700 text-gray-500 hover:bg-gray-700'
+          }`}
+        >
           <span className="w-2 h-2 rounded-full bg-gray-500" />
-          <span className="text-sm text-gray-500 font-medium">{yetToContact} Yet to Contact</span>
-        </div>
+          <span className="text-sm font-medium">{yetToContact} Yet to Contact</span>
+        </button>
       </div>
 
       {/* Cards */}
