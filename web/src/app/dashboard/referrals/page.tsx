@@ -10,9 +10,15 @@ const STATUS_LABEL: Record<Referrer['status'], string> = {
 };
 
 const STATUS_BADGE: Record<Referrer['status'], string> = {
-  done: 'bg-green-900/50 text-green-400 border border-green-700',
-  in_progress: 'bg-yellow-900/50 text-yellow-400 border border-yellow-700',
-  yet_to_contact: 'bg-gray-800 text-gray-500 border border-gray-700',
+  done: 'bg-green-900/50 text-green-400 border border-green-700 hover:bg-green-900/80',
+  in_progress: 'bg-yellow-900/50 text-yellow-400 border border-yellow-700 hover:bg-yellow-900/80',
+  yet_to_contact: 'bg-gray-800 text-gray-500 border border-gray-700 hover:bg-gray-700',
+};
+
+const STATUS_CYCLE: Record<Referrer['status'], Referrer['status']> = {
+  yet_to_contact: 'in_progress',
+  in_progress: 'done',
+  done: 'yet_to_contact',
 };
 
 const STATUS_ORDER: Referrer['status'][] = ['in_progress', 'yet_to_contact', 'done'];
@@ -20,6 +26,7 @@ const STATUS_ORDER: Referrer['status'][] = ['in_progress', 'yet_to_contact', 'do
 export default function ReferralsPage() {
   const [referrers, setReferrers] = useState<Referrer[]>([]);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/api/referrals')
@@ -30,6 +37,28 @@ export default function ReferralsPage() {
       })
       .catch(() => setLoading(false));
   }, []);
+
+  async function cycleStatus(r: Referrer) {
+    const next = STATUS_CYCLE[r.status];
+    setSaving(r.id);
+    setReferrers((prev) =>
+      prev.map((x) => (x.id === r.id ? { ...x, status: next } : x))
+    );
+    try {
+      await fetch(`/api/referrals/${r.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: next }),
+      });
+    } catch {
+      // revert on error
+      setReferrers((prev) =>
+        prev.map((x) => (x.id === r.id ? { ...x, status: r.status } : x))
+      );
+    } finally {
+      setSaving(null);
+    }
+  }
 
   if (loading) {
     return <div className="p-8 text-gray-400">Loading...</div>;
@@ -47,7 +76,7 @@ export default function ReferralsPage() {
     <div className="p-4 md:p-6">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-white mb-1">Referrals</h1>
-        <p className="text-sm text-gray-500">Network contacts who can provide referrals</p>
+        <p className="text-sm text-gray-500">Network contacts who can provide referrals. Click a badge to change status.</p>
       </div>
 
       {/* Stats row */}
@@ -76,9 +105,14 @@ export default function ReferralsPage() {
             {/* Name + badge */}
             <div className="flex items-start justify-between gap-2">
               <span className="text-sm font-semibold text-gray-100">{r.name}</span>
-              <span className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${STATUS_BADGE[r.status]}`}>
-                {STATUS_LABEL[r.status]}
-              </span>
+              <button
+                onClick={() => cycleStatus(r)}
+                disabled={saving === r.id}
+                title="Click to change status"
+                className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium transition cursor-pointer disabled:opacity-50 ${STATUS_BADGE[r.status]}`}
+              >
+                {saving === r.id ? '...' : STATUS_LABEL[r.status]}
+              </button>
             </div>
 
             {/* Company chips */}
