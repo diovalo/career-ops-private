@@ -32,6 +32,16 @@ export interface Insight {
   updatedAt: string;
 }
 
+export interface Referrer {
+  id: string;
+  name: string;
+  status: 'yet_to_contact' | 'in_progress' | 'done';
+  companies: string[];
+  outcome: string;
+  notes: string;
+  updatedAt: string;
+}
+
 export type Status =
   | 'Evaluated'
   | 'Applied'

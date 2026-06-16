@@ -1,0 +1,119 @@
+[
+  {
+    "id": "1",
+    "name": "Saurabh Chacha's son",
+    "status": "in_progress",
+    "companies": [],
+    "outcome": "",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "2",
+    "name": "Ashish bhaia",
+    "status": "done",
+    "companies": ["Microsoft", "Deloitte", "SAP", "BMW"],
+    "outcome": "Can help with referral",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "3",
+    "name": "Rinku bhaiya",
+    "status": "in_progress",
+    "companies": [],
+    "outcome": "",
+    "notes": "Talked with Felvin — willing to give referral when position is available",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "4",
+    "name": "Pinki mausi",
+    "status": "in_progress",
+    "companies": [],
+    "outcome": "",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "5",
+    "name": "Prachi",
+    "status": "done",
+    "companies": ["Siemens"],
+    "outcome": "Got referral for Siemens and submitted the form",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "6",
+    "name": "Raju bhaia",
+    "status": "in_progress",
+    "companies": [],
+    "outcome": "",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "7",
+    "name": "Prakhar bhaia",
+    "status": "done",
+    "companies": [],
+    "outcome": "Gave tips instead — no connections in Germany",
+    "notes": "Tips: LinkedIn post filter (filter by time + content type + post only); approach recently funded startup CEOs/managers; connect with HR and ask for potential roles; ask seniors for available roles; find alternative to Drivetlr in Germany; update profile regularly (even a dot pushes you up in algo)",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "8",
+    "name": "Arush (Nisha aunty's son)",
+    "status": "yet_to_contact",
+    "companies": [],
+    "outcome": "",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "9",
+    "name": "Pratibha Bua / Pratima Bua",
+    "status": "in_progress",
+    "companies": ["Deutsche Bank", "Test Solutions", "Lufthansa", "TCS"],
+    "outcome": "",
+    "notes": "Shriram okay with giving referral for these companies",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "10",
+    "name": "Pappu tauji",
+    "status": "yet_to_contact",
+    "companies": [],
+    "outcome": "",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "11",
+    "name": "Vijay sir",
+    "status": "in_progress",
+    "companies": [],
+    "outcome": "",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "12",
+    "name": "Rakshit Sheron",
+    "status": "in_progress",
+    "companies": [],
+    "outcome": "",
+    "notes": "Got contact and messaged him",
+    "updatedAt": "2026-06-16"
+  },
+  {
+    "id": "13",
+    "name": "Rishabh sir's senior",
+    "status": "done",
+    "companies": ["Check24"],
+    "outcome": "Okay giving referral for Check24",
+    "notes": "",
+    "updatedAt": "2026-06-16"
+  }
+]
