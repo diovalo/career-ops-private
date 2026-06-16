@@ -21,7 +21,7 @@
     "id": "3",
     "name": "Rinku bhaiya",
     "status": "in_progress",
-    "companies": [],
+    "companies": ["TARGOBANK"],
     "outcome": "",
     "notes": "Talked with Felvin — willing to give referral when position is available",
     "updatedAt": "2026-06-16"
@@ -74,10 +74,10 @@
   {
     "id": "9",
     "name": "Pratibha Bua / Pratima Bua",
-    "status": "in_progress",
+    "status": "done",
     "companies": ["Deutsche Bank", "Test Solutions", "Lufthansa", "TCS"],
-    "outcome": "",
-    "notes": "Shriram okay with giving referral for these companies",
+    "outcome": "Shriram okay with giving referral for these companies",
+    "notes": "",
     "updatedAt": "2026-06-16"
   },
   {
