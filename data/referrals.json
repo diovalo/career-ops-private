@@ -2,7 +2,7 @@
   {
     "id": "1",
     "name": "Saurabh Chacha's son",
-    "status": "in_progress",
+    "status": "done",
     "companies": [],
     "outcome": "",
     "notes": "",
@@ -12,7 +12,12 @@
     "id": "2",
     "name": "Ashish bhaia",
     "status": "done",
-    "companies": ["Microsoft", "Deloitte", "SAP", "BMW"],
+    "companies": [
+      "Microsoft",
+      "Deloitte",
+      "SAP",
+      "BMW"
+    ],
     "outcome": "Can help with referral",
     "notes": "",
     "updatedAt": "2026-06-16"
@@ -21,7 +26,9 @@
     "id": "3",
     "name": "Rinku bhaiya",
     "status": "in_progress",
-    "companies": ["TARGOBANK"],
+    "companies": [
+      "TARGOBANK"
+    ],
     "outcome": "",
     "notes": "Talked with Felvin — willing to give referral when position is available",
     "updatedAt": "2026-06-16"
@@ -39,7 +46,9 @@
     "id": "5",
     "name": "Prachi",
     "status": "done",
-    "companies": ["Siemens"],
+    "companies": [
+      "Siemens"
+    ],
     "outcome": "Got referral for Siemens and submitted the form",
     "notes": "",
     "updatedAt": "2026-06-16"
@@ -75,7 +84,12 @@
     "id": "9",
     "name": "Pratibha Bua / Pratima Bua",
     "status": "done",
-    "companies": ["Deutsche Bank", "Test Solutions", "Lufthansa", "TCS"],
+    "companies": [
+      "Deutsche Bank",
+      "Test Solutions",
+      "Lufthansa",
+      "TCS"
+    ],
     "outcome": "Shriram okay with giving referral for these companies",
     "notes": "",
     "updatedAt": "2026-06-16"
@@ -111,7 +125,9 @@
     "id": "13",
     "name": "Rishabh sir's senior",
     "status": "done",
-    "companies": ["Check24"],
+    "companies": [
+      "Check24"
+    ],
     "outcome": "Okay giving referral for Check24",
     "notes": "",
     "updatedAt": "2026-06-16"
