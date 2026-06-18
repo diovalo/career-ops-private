@@ -2,7 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
-| 76 | 2026-06-10 | Siemens DIS | Working Student Low Code/AI for Manufacturing | 4.2/5 | Applied | ✅ | [076](reports/076-siemens-dis-lowcode-ai-2026-06-10.md) | Applied 2026-06-13 with referral. Munich on-site. €17/hr explicit. IIoT degree = rare differentiator. Mendix gap addressed via OutSystems in CV + cover. |
+| 76 | 2026-06-10 | Siemens DIS | Working Student Low Code/AI for Manufacturing | 4.2/5 | Rejected | ✅ | [076](reports/076-siemens-dis-lowcode-ai-2026-06-10.md) | Applied 2026-06-13 with referral. Rejected 2026-06-18. Munich on-site. €17/hr. Mendix gap likely deciding factor. |
 | 73 | 2026-06-04 | Cognee (Topoteretes UG) | Working Student AI Engineering | 3.8/5 | Applied | ✅ | [073](reports/073-cognee-topoteretes-2026-06-04.md) | Applied 2026-06-04. Berlin hybrid. Python + MCP + Cognee knowledge graph engine. cv-dhawal-cognee-2026-06-04.pdf + cover-cognee-ai-2026-06-04.pdf |
 | 67 | 2026-06-02 | Proxima Fusion | Intern Enterprise AI Team | 4.5/5 | Rejected | ✅ | [067](reports/067-proxima-fusion-enterprise-ai-2026-06-02.md) | Rejected 2026-06-05. Applied 2026-06-02 (3 days). |
 | 68 | 2026-06-02 | SAP | Working Student AI-based Quality Evaluation for LLM Code Changes (HANA Cloud) | 4.2/5 | Applied | ✅ | [068](reports/068-sap-hana-llm-eval-2026-06-02.md) | Walldorf. Python + MLflow + Claude Code. LLMOps archetype match. Submit CV + cover + transcripts. |
