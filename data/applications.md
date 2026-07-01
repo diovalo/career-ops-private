@@ -2,7 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
-| 94 | 2026-07-01 | AssetMetrix GmbH | Working Student AI Engineering | 4.2/5 | Evaluated | ❌ | [094](reports/094-assetmetrix-werkstudent-ai-engineering-2026-07-01.md) | Munich hybrid. €16/hr. LLMOps archetype match. Anthropic API nice-to-have = direct match. Tailored CV needed. |
+| 94 | 2026-07-01 | AssetMetrix GmbH | Working Student AI Engineering | 4.2/5 | Applied | ✅ | [094](reports/094-assetmetrix-werkstudent-ai-engineering-2026-07-01.md) | Applied 2026-07-01. Munich hybrid. €16/hr. Tailored CV (LLMOps) + cover letter. cv-dhawal-assetmetrix-ai-2026-07-01.pdf |
 | 96 | 2026-07-01 | SAP | Working Student Full-Stack Developer & Risk Management Support | 2.8/5 | SKIP | ❌ | [096](reports/096-sap-fullstack-risk-mgmt-2026-07-01.md) | Garching/Munich hybrid. Half risk mgmt admin. SAP BTP gap. 100+ applicants. No AI. |
 | 95 | 2026-07-01 | OKAPI:Orbits | Werkstudent Full-Stack Development (Angular/Java) | 3.0/5 | SKIP | ❌ | [095](reports/095-okapi-orbits-werkstudent-fullstack-2026-07-01.md) | Munich on-site. Angular+Java match but zero AI component. Space tech domain. 13 applicants. |
 | 97 | 2026-07-01 | CargoBeamer | Werkstudent AI Factory – Rapid Delivery & Automatisierung | 2.8/5 | SKIP | ❌ | [097](reports/097-cargobeamer-werkstudent-ai-factory-2026-07-01.md) | Leipzig on-site. Agentic archetype match but German daily communication + Leipzig relocation = blockers. |
