@@ -2,6 +2,7 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 93 | 2026-07-01 | Sprinteins | Working Student Software Development | 2.8/5 | Applied | ✅ | [093](reports/093-sprinteins-werkstudent-swe-2026-07-01.md) | Applied 2026-07-01 with base CV (sde). Stuttgart/Bonn/Munich. English OK. jobs@sprinteins.com |
 | 92 | 2026-07-01 | JustWatch | Working Student Data Science | 1.5/5 | SKIP | ❌ | [092](reports/092-justwatch-werkstudent-ds-2026-07-01.md) | Berlin hybrid. Hard auto-filter: Berlin university enrollment required. Cannot apply. |
 | 91 | 2026-07-01 | Netze BW GmbH | Werkstudent Digitale Anwendungen Gashochdrucknetz | 1.5/5 | SKIP | ❌ | [091](reports/091-netze-bw-werkstudent-gas-2026-07-01.md) | Stuttgart. German C1 hard blocker. Wrong domain (gas network + SAP/Power Platform). |
 | 90 | 2026-07-01 | EnBW | Werkstudent AI Security Chat- und Voicebots | 2.2/5 | SKIP | ❌ | [090](reports/090-enbw-werkstudent-ai-security-2026-07-01.md) | Karlsruhe. German C1/C2 hard blocker. Role itself interesting (€18/hr, LLM red teaming). |
