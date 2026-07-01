@@ -2,6 +2,10 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 94 | 2026-07-01 | AssetMetrix GmbH | Working Student AI Engineering | 4.2/5 | Evaluated | ❌ | [094](reports/094-assetmetrix-werkstudent-ai-engineering-2026-07-01.md) | Munich hybrid. €16/hr. LLMOps archetype match. Anthropic API nice-to-have = direct match. Tailored CV needed. |
+| 96 | 2026-07-01 | SAP | Working Student Full-Stack Developer & Risk Management Support | 2.8/5 | SKIP | ❌ | [096](reports/096-sap-fullstack-risk-mgmt-2026-07-01.md) | Garching/Munich hybrid. Half risk mgmt admin. SAP BTP gap. 100+ applicants. No AI. |
+| 95 | 2026-07-01 | OKAPI:Orbits | Werkstudent Full-Stack Development (Angular/Java) | 3.0/5 | SKIP | ❌ | [095](reports/095-okapi-orbits-werkstudent-fullstack-2026-07-01.md) | Munich on-site. Angular+Java match but zero AI component. Space tech domain. 13 applicants. |
+| 97 | 2026-07-01 | CargoBeamer | Werkstudent AI Factory – Rapid Delivery & Automatisierung | 2.8/5 | SKIP | ❌ | [097](reports/097-cargobeamer-werkstudent-ai-factory-2026-07-01.md) | Leipzig on-site. Agentic archetype match but German daily communication + Leipzig relocation = blockers. |
 | 93 | 2026-07-01 | Sprinteins | Working Student Software Development | 2.8/5 | Applied | ✅ | [093](reports/093-sprinteins-werkstudent-swe-2026-07-01.md) | Applied 2026-07-01 with base CV (sde). Stuttgart/Bonn/Munich. English OK. jobs@sprinteins.com |
 | 92 | 2026-07-01 | JustWatch | Working Student Data Science | 1.5/5 | SKIP | ❌ | [092](reports/092-justwatch-werkstudent-ds-2026-07-01.md) | Berlin hybrid. Hard auto-filter: Berlin university enrollment required. Cannot apply. |
 | 91 | 2026-07-01 | Netze BW GmbH | Werkstudent Digitale Anwendungen Gashochdrucknetz | 1.5/5 | SKIP | ❌ | [091](reports/091-netze-bw-werkstudent-gas-2026-07-01.md) | Stuttgart. German C1 hard blocker. Wrong domain (gas network + SAP/Power Platform). |
