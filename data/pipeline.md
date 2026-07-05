@@ -3,6 +3,13 @@
 Inbox of pending URLs to evaluate.
 
 
+## Scan 2026-06-07 — API + WebSearch
+
+- [ ] https://job-boards.greenhouse.io/celonis/jobs/7544762003 | Celonis | Working Student Product & Enterprise Security | Munich/remote | New WS posting — security engineering at process-intelligence AI company; verify English ok
+- [ ] https://job-boards.greenhouse.io/celonis/jobs/7543641003 | Celonis | Ethics & Compliance Working Student: Data Privacy & AI | Munich/remote | New WS posting — AI governance/GDPR compliance; tech-adjacent; verify English and engineering component
+- [ ] https://jobs.ashbyhq.com/owkin/306c60e3-9ecf-40a1-b82a-16976bcfef87 | Owkin | Forward Deployed Engineer | Remote UK/Germany/France | AI platform company (Biology Super Intelligence + agentic AI); junior FDE role; exception rule: AI Platform + agentic workflows
+
+
 ## Fresh — June 4, 2026 (today/yesterday only)
 
 ### 4.0+ fit, English-friendly, confirmed fresh
