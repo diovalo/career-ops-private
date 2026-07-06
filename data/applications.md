@@ -2,6 +2,13 @@
 
 | # | Date | Company | Role | Score | Status | PDF | Report | Notes |
 |---|------|---------|------|-------|--------|-----|--------|-------|
+| 119 | 2026-07-06 | Deep Learning co. | Werkstudent IT Deep Learning | 2.5/5 | Applied | ✅ |  | Applied via LinkedIn; base ML-DE CV; Münster |
+| 118 | 2026-07-06 | Schmalz | Working Student Frontend Development & Test Automation | 2.5/5 | Applied | ✅ |  | Applied via LinkedIn; base FSD-EN CV + CL; Glatten; Playwright+TypeScript+Java match |
+| 117 | 2026-07-06 | Provinzial | Werkstudent IT Data Warehouse | 2.5/5 | Applied | ✅ | [117](reports/117-provinzial-data-warehouse-2026-07-06.md) | Applied via LinkedIn; base DA-DE CV; Detmold; ETL/DWH |
+| 113 | 2026-07-06 | TU Berlin (Quality Lab) | Studentische Beschäftigung — Orchestrator Agents | 3.5/5 | Applied | ✅ | [113](reports/113-tu-berlin-quality-lab-2026-07-05.md) | Applied via email bewerbung@qu.tu-berlin.de; combined PDF (CV+CL+Studienbescheinigung+Notenübersicht); tailored EN CV + CL |
+| 114 | 2026-07-06 | TU Berlin (BIFOLD) | Studentische Beschäftigung — LLM/VLM Agents Earth Obs. | 3.8/5 | Applied | ✅ | [114](reports/114-tu-berlin-bifold-remote-sensing-2026-07-05.md) | Applied via email work@rsim.tu-berlin.de; Prof. Dr. Begüm Demir; combined PDF; tailored EN CV + CL |
+| 115 | 2026-07-06 | Volkswagen Group Innovation | Internship — AI Adversarial Attacks | 3.2/5 | Applied | ✅ | [115](reports/115-volkswagen-ai-adversarial-2026-07-05.md) | Applied via LinkedIn; base SDE-EN CV; German B2 gap disclosed; work permit attached |
+| 116 | 2026-07-06 | TU Berlin (BIFOLD DEEM) | Studentische Beschäftigung — ML/Data Engineering Research | 2.8/5 | Applied | ✅ | [116](reports/116-tu-berlin-bifold-deem-lab-2026-07-05.md) | Applied via email sekr@deem.tu-berlin.de; Prof. Dr. Schelter; base ML-EN CV + CL |
 | 112 | 2026-07-05 | Moog | Werkstudent Business Intelligence & Automation | 2.8/5 | Applied | ✅ |  | Base DE CV (DA); applied via LinkedIn |
 | 111 | 2026-07-05 | TenneT | Werkstudent Datenanalyse & Prozessoptimierung | 2.8/5 | Applied | ✅ |  | Base DE CV (DA); applied via LinkedIn |
 | 110 | 2026-07-05 | flaschenpost | Werkstudent Data Analytics - HR | 2.8/5 | Applied | ✅ |  | Base DE CV (DA); applied via LinkedIn |
