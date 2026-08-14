@@ -70,7 +70,7 @@
 | 114 | 2026-07-06 | TU Berlin (BIFOLD) | Studentische Beschäftigung — LLM/VLM Agents Earth Obs. | 3.8/5 | Applied | ✅ | [114](reports/114-tu-berlin-bifold-remote-sensing-2026-07-05.md) | Applied via email work@rsim.tu-berlin.de; Prof. Dr. Begüm Demir; combined PDF; tailored EN CV + CL |
 | 115 | 2026-07-06 | Volkswagen Group Innovation | Internship — AI Adversarial Attacks | 3.2/5 | Applied | ✅ | [115](reports/115-volkswagen-ai-adversarial-2026-07-05.md) | Applied via LinkedIn; base SDE-EN CV; German B2 gap disclosed; work permit attached |
 | 116 | 2026-07-06 | TU Berlin (BIFOLD DEEM) | Studentische Beschäftigung — ML/Data Engineering Research | 2.8/5 | Applied | ✅ | [116](reports/116-tu-berlin-bifold-deem-lab-2026-07-05.md) | Applied via email sekr@deem.tu-berlin.de; Prof. Dr. Schelter; base ML-EN CV + CL |
-| 112 | 2026-07-05 | Moog | Werkstudent Business Intelligence & Automation | 2.8/5 | Applied | ✅ |  | Base DE CV (DA); applied via LinkedIn |
+| 112 | 2026-07-05 | Moog | Werkstudent Business Intelligence & Automation | 2.8/5 | Rejected | ✅ | Base DE CV (DA); applied via LinkedIn |
 | 111 | 2026-07-05 | TenneT | Werkstudent Datenanalyse & Prozessoptimierung | 2.8/5 | Rejected | ✅ | Base DE CV (DA); applied via LinkedIn |
 | 110 | 2026-07-05 | flaschenpost | Werkstudent Data Analytics - HR | 2.8/5 | Rejected | ✅ | Base DE CV (DA); applied via LinkedIn |
 | 105 | 2026-07-05 | Enpal | AI Agents & Automations Internship | 4.2/5 | Rejected | ✅ | [105](reports/105-enpal-ai-agents-2026-07-05.md) | Tailored EN CV + CL; applied via form with project answer |
