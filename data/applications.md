@@ -72,7 +72,7 @@
 | 116 | 2026-07-06 | TU Berlin (BIFOLD DEEM) | Studentische Beschäftigung — ML/Data Engineering Research | 2.8/5 | Applied | ✅ | [116](reports/116-tu-berlin-bifold-deem-lab-2026-07-05.md) | Applied via email sekr@deem.tu-berlin.de; Prof. Dr. Schelter; base ML-EN CV + CL |
 | 112 | 2026-07-05 | Moog | Werkstudent Business Intelligence & Automation | 2.8/5 | Applied | ✅ |  | Base DE CV (DA); applied via LinkedIn |
 | 111 | 2026-07-05 | TenneT | Werkstudent Datenanalyse & Prozessoptimierung | 2.8/5 | Applied | ✅ |  | Base DE CV (DA); applied via LinkedIn |
-| 110 | 2026-07-05 | flaschenpost | Werkstudent Data Analytics - HR | 2.8/5 | Applied | ✅ |  | Base DE CV (DA); applied via LinkedIn |
+| 110 | 2026-07-05 | flaschenpost | Werkstudent Data Analytics - HR | 2.8/5 | Rejected | ✅ | Base DE CV (DA); applied via LinkedIn |
 | 105 | 2026-07-05 | Enpal | AI Agents & Automations Internship | 4.2/5 | Rejected | ✅ | [105](reports/105-enpal-ai-agents-2026-07-05.md) | Tailored EN CV + CL; applied via form with project answer |
 | 106 | 2026-07-05 | ControlExpert | Working Student QA Engineer - AI/LLM Systems | 4.0/5 | Rejected | ✅ | [106](reports/106-controlexpert-qa-llm-2026-07-05.md) | Tailored EN CV + CL; applied via form |
 | 107 | 2026-07-05 | Eggersmann Gruppe | Werkstudent Data & Software Engineering IIoT | 4.0/5 | Rejected | ✅ | [107](reports/107-eggersmann-iiot-2026-07-05.md) | Aachen digitalHub; EN primary lang; IIoT degree match; no CL needed; applied 2026-07-05 |
